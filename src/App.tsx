@@ -52,14 +52,23 @@ function App() {
           </div>
         </FadeIn>
 
-        {/* Email Action Link */}
-        <FadeIn delay={0.2} y={20}>
+        {/* Contact Action Links */}
+        <FadeIn delay={0.2} y={20} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full max-w-lg mx-auto">
           <a
             href="mailto:adnanmujtabba5682@gmail.com"
-            className="inline-flex items-center gap-3 text-white bg-gradient-to-r from-[#B600A8] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(182,0,168,0.3)] mb-12"
+            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#B600A8] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(182,0,168,0.3)] w-full sm:w-auto"
           >
             <Mail size={18} />
             <span>adnanmujtabba5682@gmail.com</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shaikh-adnan-270201273/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#0077B5] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,119,181,0.3)] w-full sm:w-auto"
+          >
+            <Linkedin size={18} />
+            <span>Connect on LinkedIn</span>
           </a>
         </FadeIn>
 
@@ -75,7 +84,7 @@ function App() {
             <Github size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/shaikh-adnan-2702"
+            href="https://www.linkedin.com/in/shaikh-adnan-270201273/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 rounded-full border border-[#D7E2EA]/20 flex items-center justify-center text-[#D7E2EA] transition-all duration-300 hover:border-white hover:text-white hover:bg-white/5"
