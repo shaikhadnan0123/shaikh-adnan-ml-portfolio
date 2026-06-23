@@ -4,7 +4,7 @@ import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { FadeIn } from './components/FadeIn';
-import { Mail, Github, Linkedin, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Mail, Github, Linkedin, Phone, MapPin, ArrowUp, FileText } from 'lucide-react';
 
 function App() {
   return (
@@ -53,10 +53,10 @@ function App() {
         </FadeIn>
 
         {/* Contact Action Links */}
-        <FadeIn delay={0.2} y={20} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full max-w-lg mx-auto">
+        <FadeIn delay={0.2} y={20} className="flex flex-col lg:flex-row gap-4 justify-center items-center mb-12 w-full max-w-3xl mx-auto">
           <a
             href="mailto:adnanmujtabba5682@gmail.com"
-            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#B600A8] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(182,0,168,0.3)] w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#B600A8] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(182,0,168,0.3)] w-full lg:w-auto"
           >
             <Mail size={18} />
             <span>adnanmujtabba5682@gmail.com</span>
@@ -65,10 +65,19 @@ function App() {
             href="https://www.linkedin.com/in/shaikh-adnan-270201273/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#0077B5] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,119,181,0.3)] w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#0077B5] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,119,181,0.3)] w-full lg:w-auto"
           >
             <Linkedin size={18} />
             <span>Connect on LinkedIn</span>
+          </a>
+          <a
+            href="/Adnan_Shaikh_Resume_ML.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#7621B0] to-[#BE4C00] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(118,33,176,0.3)] w-full lg:w-auto"
+          >
+            <FileText size={18} />
+            <span>Download Resume</span>
           </a>
         </FadeIn>
 

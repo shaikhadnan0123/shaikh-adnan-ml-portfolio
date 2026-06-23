@@ -92,14 +92,24 @@ export const AboutSection: React.FC = () => {
         {/* Gap between text and button */}
         <div className="h-16 sm:h-20 md:h-24" />
 
-        {/* Contact button */}
+        {/* Actions (Contact & Resume) */}
         <FadeIn delay={0.4} y={20}>
-          <ContactButton
-            onClick={() => {
-              const el = document.getElementById('contact');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
-          />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <ContactButton
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+            />
+            <a
+              href="/Adnan_Shaikh_Resume_ML.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base inline-flex items-center justify-center select-none hover:bg-white/10 hover:border-white hover:text-white"
+            >
+              View Resume
+            </a>
+          </div>
         </FadeIn>
       </div>
 

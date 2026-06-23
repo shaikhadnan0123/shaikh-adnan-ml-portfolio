@@ -46,6 +46,14 @@ export const HeroSection: React.FC = () => {
           >
             Projects
           </button>
+          <a
+            href="/Adnan_Shaikh_Resume_ML.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70 flex items-center"
+          >
+            Resume
+          </a>
           <button
             onClick={() => scrollToSection('contact')}
             className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
