@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { FadeIn } from './FadeIn';
 import { Magnet } from './Magnet';
 import { ContactButton } from './ContactButton';
 
 export const HeroSection: React.FC = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      const x = (clientX / innerWidth - 0.5) * 40;
+      const y = (clientY / innerHeight - 0.5) * 40;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -13,6 +29,28 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip select-none bg-[#0C0C0C]">
+      
+      {/* Background Interactive Photo Layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.22]">
+        <motion.div
+          animate={{
+            x: mousePosition.x,
+            y: mousePosition.y,
+            scale: [1.1, 1.15, 1.1],
+          }}
+          transition={{
+            x: { type: 'spring', stiffness: 45, damping: 20 },
+            y: { type: 'spring', stiffness: 45, damping: 20 },
+            scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' }
+          }}
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url("/adnan.jpg")' }}
+        />
+        {/* Gradients overlay to blend with #0C0C0C background */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-transparent to-[#0C0C0C]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#0C0C0C_85%)]" />
+      </div>
       
       {/* Navbar */}
       <FadeIn
@@ -35,7 +73,7 @@ export const HeroSection: React.FC = () => {
             About
           </button>
           <button
-            onClick={() => scrollToSection('services')}
+            onClick={() => scrollToSection('skills')}
             className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
           >
             Skills

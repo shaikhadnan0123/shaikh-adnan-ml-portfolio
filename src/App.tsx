@@ -2,6 +2,7 @@ import { HeroSection } from './components/HeroSection';
 import { MarqueeSection } from './components/MarqueeSection';
 import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
+import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { FadeIn } from './components/FadeIn';
 import { Mail, Github, Linkedin, Phone, MapPin, ArrowUp, FileText } from 'lucide-react';
@@ -21,6 +22,9 @@ function App() {
 
       {/* 4. Expertise Section */}
       <ServicesSection />
+
+      {/* 4.5. Skills Section */}
+      <SkillsSection />
 
       {/* 5. Projects Section */}
       <ProjectsSection />
