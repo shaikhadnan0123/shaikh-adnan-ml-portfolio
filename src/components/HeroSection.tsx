@@ -31,20 +31,24 @@ export const HeroSection: React.FC = () => {
     <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip select-none bg-[#0C0C0C]">
       
       {/* Background Interactive Photo Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.22]">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.25]">
         <motion.div
           animate={{
             x: mousePosition.x,
             y: mousePosition.y,
-            scale: [1.1, 1.15, 1.1],
+            scale: [1.08, 1.12, 1.08],
           }}
           transition={{
             x: { type: 'spring', stiffness: 45, damping: 20 },
             y: { type: 'spring', stiffness: 45, damping: 20 },
             scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' }
           }}
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/adnan.jpg")' }}
+          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat"
+          style={{ 
+            backgroundImage: 'url("/adnan.jpg")',
+            backgroundPosition: 'center 18%',
+            transformOrigin: 'center 18%'
+          }}
         />
         {/* Gradients overlay to blend with #0C0C0C background */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/80" />
