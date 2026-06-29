@@ -107,8 +107,16 @@ export const HeroSection: React.FC = () => {
 
       {/* Hero Heading Container */}
       <div className="w-full overflow-hidden flex items-center justify-center z-0 flex-grow">
-        <FadeIn as="div" delay={0.15} y={40} className="w-full text-center">
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw] mt-6 sm:mt-4 md:-mt-5">
+        <FadeIn as="div" delay={0.15} y={40} className="w-full text-center flex flex-col items-center justify-center px-4">
+          {/* Recruitment Status Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(182,0,168,0.15)]">
+            <span className="w-2 h-2 rounded-full bg-[#00B68A] animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-[#00B68A] absolute" />
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#D7E2EA]/90 font-medium">
+              Actively Seeking ML Intern / Fresher Roles | Hyderabad & Remote
+            </span>
+          </div>
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw] mt-2 sm:mt-1 md:-mt-2">
             Hi, i&apos;m adnan
           </h1>
         </FadeIn>
@@ -143,7 +151,7 @@ export const HeroSection: React.FC = () => {
           className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-left"
         >
           <span style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}>
-            an ai & ml engineer driven by building smart and data-driven solutions
+            a startup-ready AI & ML engineer specializing in predictive modeling & full-stack deployment
           </span>
         </FadeIn>
 

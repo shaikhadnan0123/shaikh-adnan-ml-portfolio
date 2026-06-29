@@ -132,7 +132,7 @@ const skillsData: SkillGroup[] = [
     title: 'Programming Languages',
     description: 'Core languages used to construct AI/ML models, query large databases, and build backend interfaces.',
     icon: <AnimatedTerminal />,
-    skills: ['Python (Primary)', 'JavaScript', 'C++', 'SQL'],
+    skills: ['Python (Primary)', 'SQL', 'TypeScript', 'JavaScript', 'C++'],
     glowColor: 'from-[#BE4C00]/40 to-[#B60050]/40',
     badgeBg: 'bg-[#BE4C00]/10 hover:bg-[#BE4C00]/20 text-[#BE4C00] border-[#BE4C00]/10'
   },
@@ -141,7 +141,7 @@ const skillsData: SkillGroup[] = [
     description: 'Specialized mathematical libraries, neural network pipelines, and feature engineering tools.',
     icon: <AnimatedBrain />,
     skills: [
-      'Scikit-learn', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 
+      'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 
       'EDA', 'Feature Engineering', 'Predictive Modeling', 
       'Supervised Learning', 'Model Evaluation', 'NLP', 
       'Deep Learning', 'Generative AI'
@@ -151,9 +151,9 @@ const skillsData: SkillGroup[] = [
   },
   {
     title: 'Web & Cloud Deployment',
-    description: 'Frameworks and environments utilized to deploy models, establish REST APIs, and host systems.',
+    description: 'Frameworks, environments, and frontend tech utilized to deploy models, establish REST APIs, and host systems.',
     icon: <AnimatedCloud />,
-    skills: ['Flask', 'REST APIs', 'Render Cloud', 'Oracle Cloud (OCI)', 'Databricks', 'HTML/CSS'],
+    skills: ['FastAPI', 'Flask', 'Docker', 'REST APIs', 'React', 'Tailwind CSS', 'Render', 'Oracle Cloud (OCI)', 'Databricks'],
     glowColor: 'from-[#00A8FF]/40 to-[#0077B5]/40',
     badgeBg: 'bg-[#00A8FF]/10 hover:bg-[#00A8FF]/20 text-[#00A8FF] border-[#00A8FF]/10'
   },
@@ -161,7 +161,7 @@ const skillsData: SkillGroup[] = [
     title: 'Developer Tools & DBs',
     description: 'Version control platforms, development setups, and relational / non-relational database storage.',
     icon: <AnimatedDatabase />,
-    skills: ['Git', 'GitHub', 'Jupyter Notebook', 'VS Code', 'MongoDB', 'SQLite', 'MySQL'],
+    skills: ['Git', 'GitHub', 'SQLite', 'MySQL', 'MongoDB', 'Jupyter Notebook', 'VS Code'],
     glowColor: 'from-[#00B68A]/40 to-[#2E7D32]/40',
     badgeBg: 'bg-[#00B68A]/10 hover:bg-[#00B68A]/20 text-[#00B68A] border-[#00B68A]/10'
   }

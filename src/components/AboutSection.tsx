@@ -85,8 +85,8 @@ export const AboutSection: React.FC = () => {
 
         {/* Animated text paragraph */}
         <AnimatedText
-          text="With a strong foundation in Artificial Intelligence and Machine Learning, i focus on building predictive models, data workflows, and end-to-end web applications. I truly enjoy working with complex datasets to uncover insights and build smart solutions. Let's solve something incredible together!"
-          className="text-[#D7E2EA] font-medium leading-relaxed max-w-[560px] text-center text-[clamp(1rem,2vw,1.35rem)]"
+          text="With a strong foundation in Artificial Intelligence and Machine Learning, I bridge the gap between AI theory and production software. I don't just build models in Jupyter Notebooks—I design end-to-end predictive systems, build FastAPI microservices, and construct responsive React web applications. Ready to deliver immediate engineering value on Day 1."
+          className="text-[#D7E2EA] font-medium leading-relaxed max-w-[720px] text-center text-[clamp(1rem,2vw,1.35rem)]"
         />
 
         {/* Gap between text and button */}
