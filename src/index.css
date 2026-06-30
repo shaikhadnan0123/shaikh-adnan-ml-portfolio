@@ -46,6 +46,20 @@
     background: rgba(182, 0, 168, 0.35);
     color: #ffffff;
   }
+
+  /* Lenis smooth scroll */
+  html.lenis {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
 }
 
 /* ================================

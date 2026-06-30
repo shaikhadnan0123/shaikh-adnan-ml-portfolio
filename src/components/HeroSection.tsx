@@ -56,54 +56,8 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#0C0C0C_85%)]" />
       </div>
       
-      {/* Navbar */}
-      <FadeIn
-        as="nav"
-        delay={0}
-        y={-20}
-        className="w-full flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8 z-20"
-      >
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-        >
-          Adnan
-        </button>
-        <div className="flex gap-4 sm:gap-8 md:gap-12 lg:gap-16">
-          <button
-            onClick={() => scrollToSection('about')}
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection('skills')}
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-          >
-            Skills
-          </button>
-          <button
-            onClick={() => scrollToSection('projects')}
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-          >
-            Projects
-          </button>
-          <a
-            href="/Adnan_Shaikh_Resume_ML.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70 flex items-center"
-          >
-            Resume
-          </a>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70"
-          >
-            Contact
-          </button>
-        </div>
-      </FadeIn>
+      {/* Spacer for sticky navbar */}
+      <div className="w-full h-16 md:h-20 z-20" />
 
       {/* Hero Heading Container */}
       <div className="w-full overflow-hidden flex items-center justify-center z-0 flex-grow">
