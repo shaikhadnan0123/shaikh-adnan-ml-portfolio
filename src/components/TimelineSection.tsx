@@ -18,35 +18,50 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
   {
     type: 'experience',
-    title: 'AI / ML Intern',
-    organization: 'Coincent.ai',
-    period: 'Jun 2024 — Aug 2024',
-    location: 'Remote',
+    title: 'Machine Learning Intern',
+    organization: 'TheSmartBridge',
+    period: 'Nov 2025 — Jan 2026',
+    location: 'Remote | Hyderabad, Telangana',
     description:
-      'Engineered automated feature selection and data preprocessing pipelines. Constructed scalable validation workflows using Python, Scikit-learn, and Oracle Cloud Infrastructure.',
+      'Built end-to-end ML workflows on real-world datasets using Python, Pandas, NumPy, and Scikit-learn.',
     highlights: [
-      '35% reduction in data preparation time',
-      'Automated outlier detection & formatting',
-      'Built scalable validation workflows on OCI',
+      'Applied data preprocessing, feature engineering, and model evaluation (accuracy, precision, recall, F1-score)',
+      'Worked on supervised learning pipelines — classification & regression — and predictive analytics tasks',
+      'Strengthened collaborative coding and documentation practices in a remote team environment',
     ],
     icon: <Briefcase size={20} />,
     accentColor: '#B600A8',
   },
   {
     type: 'education',
-    title: 'B.Tech — Artificial Intelligence & Machine Learning',
-    organization: 'MLR Institute of Technology (MLRITM)',
-    period: '2021 — 2025',
+    title: 'B.E. — Artificial Intelligence & Machine Learning',
+    organization: 'Lords Institute of Engineering & Technology — Osmania University',
+    period: '2022 — 2026',
     location: 'Hyderabad, India',
     description:
-      'Specialized in AI/ML with coursework in deep learning, NLP, statistical modeling, and data engineering. Completed multiple end-to-end ML projects.',
+      'Pursuing Bachelor of Engineering in AI & ML with a strong focus on data workflows, model evaluation, and software integrations. Maintained a CGPA of 8.08 / 10.',
     highlights: [
-      'Specialization in AI & Machine Learning',
-      'End-to-end ML project implementations',
-      'Strong foundation in mathematics & statistics',
+      'Focus on Supervised/Unsupervised learning, Deep Learning, and NLP',
+      'CGPA: 8.08 / 10',
+      'Affiliated with Osmania University',
     ],
     icon: <GraduationCap size={20} />,
     accentColor: '#7621B0',
+  },
+  {
+    type: 'education',
+    title: 'Intermediate (Class XII)',
+    organization: 'Sri Chaitanya Junior College, Hyder Nagar',
+    period: '2019 — 2021',
+    location: 'Hyderabad, India',
+    description:
+      'Completed senior secondary school education with major focus on Mathematics, Physics, and Chemistry.',
+    highlights: [
+      'Aggregate: 84%',
+      'MPC stream (Mathematics, Physics, Chemistry)',
+    ],
+    icon: <GraduationCap size={20} />,
+    accentColor: '#BE4C00',
   },
 ];
 
