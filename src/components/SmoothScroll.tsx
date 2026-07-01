@@ -18,19 +18,21 @@ export const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
 
     lenisRef.current = lenis;
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // Expose lenis to window for scrollTo calls
-    (window as any).__lenis = lenis;
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     return () => {
       lenis.destroy();
-      (window as any).__lenis = undefined;
+      cancelAnimationFrame(rafId);
+      (window as unknown as { __lenis?: Lenis }).__lenis = undefined;
     };
   }, []);
 

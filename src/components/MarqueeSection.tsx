@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const row1Images = [
   'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
@@ -40,28 +41,18 @@ const ROW2_BASE_OFFSET = -4320;
 
 export const MarqueeSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [scrollOffset, setScrollOffset] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      // Calculate section top relative to document body scroll
-      const sectionTop = rect.top + window.scrollY;
-      const offset = (window.scrollY - sectionTop + window.innerHeight) * 0.3;
-      setScrollOffset(offset);
-    };
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial run
+  // Map the scroll progress [0, 1] to translate offsets
+  // ROW1 moves RIGHT: from ROW1_BASE_OFFSET - 200px to ROW1_BASE_OFFSET + 300px
+  const x1 = useTransform(scrollYProgress, [0, 1], [ROW1_BASE_OFFSET - 200, ROW1_BASE_OFFSET + 300]);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const row1Transform = `translate3d(${ROW1_BASE_OFFSET + (scrollOffset - 200)}px, 0, 0)`;
-  const row2Transform = `translate3d(${ROW2_BASE_OFFSET - (scrollOffset - 200)}px, 0, 0)`;
+  // ROW2 moves LEFT: from ROW2_BASE_OFFSET + 200px to ROW2_BASE_OFFSET - 300px
+  const x2 = useTransform(scrollYProgress, [0, 1], [ROW2_BASE_OFFSET + 200, ROW2_BASE_OFFSET - 300]);
 
   return (
     <div
@@ -71,8 +62,8 @@ export const MarqueeSection: React.FC = () => {
       <div className="flex flex-col gap-3">
         {/* Row 1 - Moves RIGHT on scroll */}
         <div className="overflow-hidden w-full">
-          <div
-            style={{ transform: row1Transform, willChange: 'transform' }}
+          <motion.div
+            style={{ x: x1, willChange: 'transform' }}
             className="flex gap-3 whitespace-nowrap"
           >
             {tripledRow1.map((url, idx) => (
@@ -84,13 +75,13 @@ export const MarqueeSection: React.FC = () => {
                 loading="lazy"
               />
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Row 2 - Moves LEFT on scroll */}
         <div className="overflow-hidden w-full">
-          <div
-            style={{ transform: row2Transform, willChange: 'transform' }}
+          <motion.div
+            style={{ x: x2, willChange: 'transform' }}
             className="flex gap-3 whitespace-nowrap"
           >
             {tripledRow2.map((url, idx) => (
@@ -102,7 +93,7 @@ export const MarqueeSection: React.FC = () => {
                 loading="lazy"
               />
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

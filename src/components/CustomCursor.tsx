@@ -4,7 +4,10 @@ import { motion, useSpring } from 'framer-motion';
 export const CustomCursor: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isTouchDevice] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return !window.matchMedia('(pointer: fine)').matches;
+  });
 
   const cursorX = useSpring(0, { stiffness: 500, damping: 28 });
   const cursorY = useSpring(0, { stiffness: 500, damping: 28 });
@@ -12,51 +15,43 @@ export const CustomCursor: React.FC = () => {
   const trailY = useSpring(0, { stiffness: 120, damping: 25 });
 
   useEffect(() => {
-    // Check if device supports fine pointer (mouse)
-    const hasFineMouse = window.matchMedia('(pointer: fine)').matches;
-    if (!hasFineMouse) {
-      setIsTouchDevice(true);
-      return;
-    }
+    if (isTouchDevice) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
       trailX.set(e.clientX);
       trailY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      setIsVisible((prev) => (prev ? prev : true));
     };
 
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
 
-    // Track hover state on interactive elements
-    const handleHoverStart = () => setIsHovering(true);
-    const handleHoverEnd = () => setIsHovering(false);
+    // Track hover state on interactive elements using event delegation
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const interactiveEl = target.closest('a, button, [role="button"], input, textarea, select');
+      if (interactiveEl) {
+        setIsHovering(true);
+      }
+    };
 
-    const addHoverListeners = () => {
-      const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select');
-      interactiveElements.forEach((el) => {
-        el.addEventListener('mouseenter', handleHoverStart);
-        el.addEventListener('mouseleave', handleHoverEnd);
-      });
-      return interactiveElements;
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const interactiveEl = target.closest('a, button, [role="button"], input, textarea, select');
+      if (interactiveEl) {
+        setIsHovering(false);
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
-
-    // Add hover listeners and re-add on DOM changes
-    let elements = addHoverListeners();
-    const observer = new MutationObserver(() => {
-      elements.forEach((el) => {
-        el.removeEventListener('mouseenter', handleHoverStart);
-        el.removeEventListener('mouseleave', handleHoverEnd);
-      });
-      elements = addHoverListeners();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
 
     // Add the custom cursor class to body
     document.body.classList.add('custom-cursor-active');
@@ -65,14 +60,11 @@ export const CustomCursor: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
       document.body.classList.remove('custom-cursor-active');
-      observer.disconnect();
-      elements.forEach((el) => {
-        el.removeEventListener('mouseenter', handleHoverStart);
-        el.removeEventListener('mouseleave', handleHoverEnd);
-      });
     };
-  }, [cursorX, cursorY, trailX, trailY, isVisible]);
+  }, [cursorX, cursorY, trailX, trailY, isTouchDevice]);
 
   if (isTouchDevice) return null;
 

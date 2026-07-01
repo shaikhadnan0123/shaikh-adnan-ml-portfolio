@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, FileText } from 'lucide-react';
 
@@ -14,19 +14,28 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
   const handleScroll = useCallback(() => {
     const currentY = window.scrollY;
-    setScrolled(currentY > 50);
+    
+    setScrolled((prev) => {
+      const next = currentY > 50;
+      return prev === next ? prev : next;
+    });
+
     // Hide on scroll down past 300px, show on scroll up
     if (currentY > 300) {
-      setHidden(currentY > lastScrollY);
+      setHidden((prev) => {
+        const next = currentY > lastScrollY.current;
+        return prev === next ? prev : next;
+      });
     } else {
-      setHidden(false);
+      setHidden((prev) => (prev ? false : prev));
     }
-    setLastScrollY(currentY);
-  }, [lastScrollY]);
+    
+    lastScrollY.current = currentY;
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
