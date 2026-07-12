@@ -10,6 +10,7 @@ import { AboutSection } from './components/AboutSection';
 import { ServicesSection } from './components/ServicesSection';
 import { SkillsSection } from './components/SkillsSection';
 import { TimelineSection } from './components/TimelineSection';
+import { CertificationsSection } from './components/CertificationsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { CodingProfilesSection } from './components/CodingProfilesSection';
 import { FadeIn } from './components/FadeIn';
@@ -57,6 +58,9 @@ function App() {
           {/* 5. Journey / Timeline Section */}
           <TimelineSection />
 
+          {/* 5.5. Certifications Section */}
+          <CertificationsSection />
+
           {/* 6. Projects Section */}
           <ProjectsSection />
 
@@ -100,7 +104,7 @@ function App() {
                 <span>adnanmujtabba5682@gmail.com</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/shaikh-adnan-270201273/"
+                href="https://www.linkedin.com/in/shaikhadnan-ml/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#0077B5] to-[#7621B0] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,119,181,0.3)] w-full lg:w-auto"
@@ -109,7 +113,7 @@ function App() {
                 <span>Connect on LinkedIn</span>
               </a>
               <a
-                href="/Adnan_Shaikh_Resume_ML.pdf"
+                href="/Adnan_Shaikh_CV-ML.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#7621B0] to-[#BE4C00] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(118,33,176,0.3)] w-full lg:w-auto"
@@ -131,7 +135,7 @@ function App() {
                 <Github size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/shaikh-adnan-270201273/"
+                href="https://www.linkedin.com/in/shaikhadnan-ml/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-[#D7E2EA]/20 flex items-center justify-center text-[#D7E2EA] transition-all duration-300 hover:border-white hover:text-white hover:bg-white/5"

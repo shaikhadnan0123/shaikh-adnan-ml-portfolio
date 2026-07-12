@@ -102,7 +102,7 @@ export const AboutSection: React.FC = () => {
               }}
             />
             <a
-              href="/Adnan_Shaikh_Resume_ML.pdf"
+              href="/Adnan_Shaikh_CV-ML.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base inline-flex items-center justify-center select-none hover:bg-white/10 hover:border-white hover:text-white"

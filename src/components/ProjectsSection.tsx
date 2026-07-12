@@ -17,45 +17,38 @@ interface Project {
 const projectsData: Project[] = [
   {
     num: '01',
-    category: 'ML Web Application',
-    name: 'Employee Performance Prediction System',
-    description: 'Designed and deployed an end-to-end predictive system forecasting employee attrition and performance scores based on historical data. Built a clean React dashboard integrated with high-performance backend inferences.',
-    stack: ['Python', 'Scikit-learn', 'FastAPI', 'React', 'SQLite', 'Docker', 'Render'],
-    metrics: ['94% Attrition Classification Accuracy', '30% Latency Reduction via FastAPI Async Callbacks'],
+    category: 'Full-Stack AI Platform',
+    name: 'internAI — AI Resume Analysis & Internship Matching Platform',
+    description: 'Built a full-stack AI platform for resume analysis and internship matching at a Gen APAC hackathon, integrating Google Gemini AI for resume parsing, ATS scoring, and personalized internship recommendations.',
+    stack: ['React', 'Vite', 'Express.js', 'Flask', 'Gemini AI', 'Pandas', 'Docker', 'Render'],
+    metrics: [
+      'Integrating Google Gemini AI for resume parsing & ATS scoring',
+      'Designed a priority-scoring pipeline in Pandas that ranks applications',
+      'Containerized with Docker and deployed on Render cloud for live access'
+    ],
     images: [
       '/ml_code.png',       // Left Top
-      '/terminal_logs.png', // Left Bottom
-      '/project1_main.png',  // Right Main Showcase
+      '/dataset_grid.png',  // Left Bottom
+      '/project3_main.png',  // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
     linkLabel: 'GitHub Code',
   },
   {
     num: '02',
-    category: 'Business Intelligence & EDA',
-    name: 'Restaurant Tips Intelligence Analysis',
-    description: 'Conducted deep statistical exploratory data analysis (EDA) on transaction logs to predict customer tipping behaviors. Created comprehensive correlation heatmaps and regression models for revenue forecasting.',
-    stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Jupyter'],
-    metrics: ['0.82 R² Score on Gratuity Predictions', 'Identified top 3 scheduling variables for dining peaks'],
+    category: 'ML Web Application',
+    name: 'Employee Performance Prediction System',
+    description: 'Deployed an end-to-end ML web app predicting employee performance from real HR datasets on Render cloud.',
+    stack: ['Python', 'Scikit-learn', 'Flask', 'Pandas', 'NumPy', 'Render', 'Git'],
+    metrics: [
+      'Performed data cleaning, outlier detection, and feature selection',
+      'Trained Scikit-learn classifiers; selected best model by F1-score & accuracy',
+      'Built a Flask REST API for real-time predictions; managed via Git & GitHub'
+    ],
     images: [
       '/ml_code.png',       // Left Top
-      '/dataset_grid.png',  // Left Bottom
-      '/project2_main.png',  // Right Main Showcase
-    ],
-    link: 'https://github.com/shaikhadnan0123',
-    linkLabel: 'GitHub Code',
-  },
-  {
-    num: '03',
-    category: 'Internship Work',
-    name: 'AI Predictive Analytics Pipelines',
-    description: 'Engineered automated feature selection and data preprocessing pipelines. Constructed scalable validation workflows to streamline model training preparation and deployment in cloud environments.',
-    stack: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Git/GitHub', 'Oracle Cloud (OCI)', 'Databricks'],
-    metrics: ['35% Time Saved on Data Preparation', '100% Automated Outlier Detection & Formatting'],
-    images: [
-      '/dataset_grid.png',  // Left Top
       '/terminal_logs.png', // Left Bottom
-      '/project3_main.png',  // Right Main Showcase
+      '/project1_main.png',  // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
     linkLabel: 'GitHub Code',
