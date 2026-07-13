@@ -113,7 +113,7 @@ function App() {
                 <span>Connect on LinkedIn</span>
               </a>
               <a
-                href="/Adnan_Shaikh_CV-ML.pdf"
+                href="/Shaikh_Adnan_CV-ML.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 text-white bg-gradient-to-r from-[#7621B0] to-[#BE4C00] px-8 py-3.5 rounded-full uppercase tracking-widest font-medium text-sm transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(118,33,176,0.3)] w-full lg:w-auto"
