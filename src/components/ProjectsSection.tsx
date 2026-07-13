@@ -22,9 +22,9 @@ const projectsData: Project[] = [
     description: 'Built a full-stack AI platform for resume analysis and internship matching at a Gen APAC hackathon, integrating Google Gemini AI for resume parsing, ATS scoring, and personalized internship recommendations.',
     stack: ['React', 'Vite', 'Express.js', 'Flask', 'Gemini AI', 'Pandas', 'Docker', 'Render'],
     metrics: [
-      'Integrating Google Gemini AI for resume parsing & ATS scoring',
-      'Designed a priority-scoring pipeline in Pandas that ranks applications',
-      'Containerized with Docker and deployed on Render cloud for live access'
+      'Built a full-stack AI platform integrating Google Gemini AI for resume parsing & ATS scoring',
+      'Designed a priority-scoring pipeline in Pandas that ranks applications on urgency, platform, role-match, and status',
+      'Containerized the app with Docker and deployed on Render cloud for live access'
     ],
     images: [
       '/ml_code.png',       // Left Top
@@ -41,9 +41,9 @@ const projectsData: Project[] = [
     description: 'Deployed an end-to-end ML web app predicting employee performance from real HR datasets on Render cloud.',
     stack: ['Python', 'Scikit-learn', 'Flask', 'Pandas', 'NumPy', 'Render', 'Git'],
     metrics: [
-      'Performed data cleaning, outlier detection, and feature selection',
-      'Trained Scikit-learn classifiers; selected best model by F1-score & accuracy',
-      'Built a Flask REST API for real-time predictions; managed via Git & GitHub'
+      'Performed data cleaning, outlier detection, and feature selection to improve model generalization',
+      'Trained and compared multiple Scikit-learn classifiers; selected the best model by F1-score and accuracy',
+      'Built a Flask REST API for real-time predictions; managed the full project lifecycle via Git & GitHub'
     ],
     images: [
       '/ml_code.png',       // Left Top

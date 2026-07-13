@@ -19,9 +19,9 @@ const timelineData: TimelineItem[] = [
   {
     type: 'experience',
     title: 'Machine Learning Intern',
-    organization: 'TheSmartBridge',
-    period: 'Nov 2025 — Jan 2026',
-    location: 'Remote | Hyderabad, Telangana',
+    organization: 'The SmartBridge (Certified)',
+    period: 'Nov 2025 – Jan 2026',
+    location: 'Remote | Gachibowli, Hyderabad',
     description:
       'Built end-to-end ML workflows on real-world datasets using Python, Pandas, NumPy, and Scikit-learn.',
     highlights: [
@@ -35,8 +35,8 @@ const timelineData: TimelineItem[] = [
   {
     type: 'education',
     title: 'B.E. — Artificial Intelligence & Machine Learning',
-    organization: 'Lords Institute of Engineering & Technology — Osmania University',
-    period: '2022 — 2026',
+    organization: 'Lords Institute of Engineering & Technology, Hyderabad — Osmania University',
+    period: 'Nov 2022 – Aug 2026',
     location: 'Hyderabad, India',
     description:
       'Pursuing Bachelor of Engineering in AI & ML with a strong focus on data workflows, model evaluation, and software integrations. Maintained a CGPA of 8.08 / 10.',
@@ -50,9 +50,9 @@ const timelineData: TimelineItem[] = [
   },
   {
     type: 'education',
-    title: 'Intermediate (Class XII)',
-    organization: 'Sri Chaitanya Junior College, Hyder Nagar',
-    period: '2019 — 2021',
+    title: 'Higher Secondary Education',
+    organization: 'Sri Chaitanya Junior College, Miyapur, Hyderabad',
+    period: 'June 2019 – March 2021',
     location: 'Hyderabad, India',
     description:
       'Completed senior secondary school education with major focus on Mathematics, Physics, and Chemistry.',
@@ -62,6 +62,20 @@ const timelineData: TimelineItem[] = [
     ],
     icon: <GraduationCap size={20} />,
     accentColor: '#BE4C00',
+  },
+  {
+    type: 'education',
+    title: 'Secondary Education',
+    organization: 'Pooja Public School, Degloor, Nanded',
+    period: 'June 2018 – March 2019',
+    location: 'Nanded, India',
+    description:
+      'Completed secondary school education with standard school curriculum.',
+    highlights: [
+      'Secondary Education curriculum',
+    ],
+    icon: <GraduationCap size={20} />,
+    accentColor: '#00B68A',
   },
 ];
 
