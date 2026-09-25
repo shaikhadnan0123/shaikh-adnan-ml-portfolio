@@ -19,9 +19,25 @@ const timelineData: TimelineItem[] = [
   {
     type: 'experience',
     title: 'Machine Learning Intern',
-    organization: 'The SmartBridge (Certified)',
+    organization: 'SaiKet Systems',
+    period: 'Dec 2025 – Jan 2026',
+    location: 'Remote',
+    description:
+      'Engineered an end-to-end customer churn prediction pipeline on enterprise telecommunications data.',
+    highlights: [
+      'Implemented data preprocessing, categorical encoding, and stratified 80/20 train-test splits',
+      'Executed feature engineering on contract type, tenure, and monthly charges to isolate key retention drivers',
+      'Trained & benchmarked Logistic Regression, Decision Trees, Random Forests, and Gradient Boosting via Scikit-learn',
+    ],
+    icon: <Briefcase size={20} />,
+    accentColor: '#B600A8',
+  },
+  {
+    type: 'experience',
+    title: 'Machine Learning Intern (Certified)',
+    organization: 'The SmartBridge',
     period: 'Nov 2025 – Jan 2026',
-    location: 'Remote | Gachibowli, Hyderabad',
+    location: 'Hyderabad, India',
     description:
       'Built end-to-end ML workflows on real-world datasets using Python, Pandas, NumPy, and Scikit-learn.',
     highlights: [

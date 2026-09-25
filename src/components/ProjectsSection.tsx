@@ -17,14 +17,14 @@ interface Project {
 const projectsData: Project[] = [
   {
     num: '01',
-    category: 'Full-Stack AI Platform',
-    name: 'internAI — AI Resume Analysis & Internship Matching Platform',
-    description: 'Built a full-stack AI platform for resume analysis and internship matching at a Gen APAC hackathon, integrating Google Gemini AI for resume parsing, ATS scoring, and personalized internship recommendations.',
-    stack: ['React', 'Vite', 'Express.js', 'Flask', 'Gemini AI', 'Pandas', 'Docker', 'Render'],
+    category: 'Full-Stack GenAI Platform',
+    name: 'internAI — AI Resume & Matching Platform',
+    description: 'Engineered a full-stack platform at Gen AI Academy APAC Hackathon, integrating Google Gemini AI for automated resume parsing, ATS scoring, and high-performance applicant matching.',
+    stack: ['Python', 'Flask', 'Gemini AI', 'Google BigQuery', 'NVIDIA cuDF', 'Docker', 'Render'],
     metrics: [
-      'Built a full-stack AI platform integrating Google Gemini AI for resume parsing & ATS scoring',
-      'Designed a priority-scoring pipeline in Pandas that ranks applications on urgency, platform, role-match, and status',
-      'Containerized the app with Docker and deployed on Render cloud for live access'
+      'Engineered a full-stack platform at Gen AI Academy APAC Hackathon, integrating Google Gemini AI for resume parsing & ATS scoring',
+      'Benchmarked a GPU-accelerated NVIDIA cuDF data pipeline against Pandas over 100,000 records, cutting latency from 4.35s to 0.24s (an 18.5x speedup)',
+      'Architected 5 Flask REST API endpoints with Google Cloud BigQuery persistence, containerized via Docker on Render'
     ],
     images: [
       '/ml_code.png',       // Left Top
@@ -32,23 +32,42 @@ const projectsData: Project[] = [
       '/project3_main.png',  // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
-    linkLabel: 'GitHub Code',
+    linkLabel: 'Live Demo / GitHub',
   },
   {
     num: '02',
-    category: 'ML Web Application',
-    name: 'Employee Performance Prediction System',
-    description: 'Deployed an end-to-end ML web app predicting employee performance from real HR datasets on Render cloud.',
-    stack: ['Python', 'Scikit-learn', 'Flask', 'Pandas', 'NumPy', 'Render', 'Git'],
+    category: 'Predictive ML & Web App',
+    name: 'NYC Airbnb Price Predictor',
+    description: 'Trained and evaluated Scikit-learn regression models across 47,840 NYC Airbnb listings to forecast nightly prices, deploying a production-ready Flask REST API with a responsive React/Vite web interface.',
+    stack: ['Python', 'Scikit-learn', 'Flask', 'React.js', 'Vite', 'Docker', 'Render', 'Vercel'],
     metrics: [
-      'Performed data cleaning, outlier detection, and feature selection to improve model generalization',
-      'Trained and compared multiple Scikit-learn classifiers; selected the best model by F1-score and accuracy',
-      'Built a Flask REST API for real-time predictions; managed the full project lifecycle via Git & GitHub'
+      'Trained & evaluated 4 Scikit-learn regression models across 47,840 NYC Airbnb listings; scoped outlier boundaries ($10–$500) to optimize generalization',
+      'Selected Extra Trees Regressor as top-performing production model achieving R² of 0.51 and MAE of $38.55',
+      'Deployed a Dockerized Flask REST API backend on Render with a responsive React/Vite interface on Vercel'
     ],
     images: [
       '/ml_code.png',       // Left Top
       '/terminal_logs.png', // Left Bottom
       '/project1_main.png',  // Right Main Showcase
+    ],
+    link: 'https://github.com/shaikhadnan0123',
+    linkLabel: 'Live Demo / GitHub',
+  },
+  {
+    num: '03',
+    category: 'Classification & Churn Analytics',
+    name: 'Customer Churn Prediction Pipeline',
+    description: 'Engineered an end-to-end customer churn prediction pipeline on enterprise telecommunications data, isolating key retention drivers and benchmarking ensemble models for maximum ROC-AUC and recall.',
+    stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Random Forest', 'Gradient Boosting', 'EDA'],
+    metrics: [
+      'Engineered an end-to-end customer churn pipeline on enterprise telecom data with stratified 80/20 train-test splits & categorical encoding',
+      'Isolated highest-leverage retention indicators (contract type, tenure, monthly charges) through targeted feature engineering',
+      'Trained & benchmarked Logistic Regression, Decision Trees, Random Forests & Gradient Boosting models across ROC-AUC, precision & F1-score'
+    ],
+    images: [
+      '/ml_code.png',       // Left Top
+      '/terminal_logs.png', // Left Bottom
+      '/project2_main.png',  // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
     linkLabel: 'GitHub Code',
