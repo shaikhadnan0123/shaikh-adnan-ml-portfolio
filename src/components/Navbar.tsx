@@ -99,7 +99,7 @@ export const Navbar: React.FC = () => {
               </button>
             ))}
             <a
-              href="/Shaikh_Adnan_CV-ML.pdf"
+              href="/Adnan_Resume_Final.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#D7E2EA] font-medium uppercase tracking-wider text-sm lg:text-[1rem] transition-all duration-200 hover:opacity-70 hover:text-white"
@@ -170,7 +170,7 @@ export const Navbar: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ delay: navLinks.length * 0.08, duration: 0.3 }}
-              href="/Shaikh_Adnan_CV-ML.pdf"
+              href="/Adnan_Resume_Final.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-[#D7E2EA] font-bold uppercase tracking-[0.2em] text-2xl hover:text-white transition-colors duration-200"
