@@ -129,43 +129,47 @@ interface SkillGroup {
 
 const skillsData: SkillGroup[] = [
   {
-    title: 'Programming Languages',
-    description: 'Core languages used to construct AI/ML models, query large databases, and build backend interfaces.',
+    title: 'Languages & Frontend',
+    description: 'Core programming languages and modern frontend tooling for intelligent AI-driven applications.',
     icon: <AnimatedTerminal />,
-    skills: ['Python (Primary)', 'JavaScript', 'C++', 'SQL'],
+    skills: ['Python', 'JavaScript', 'SQL', 'HTML/CSS', 'React', 'Vite'],
     glowColor: 'from-[#BE4C00]/40 to-[#B60050]/40',
     badgeBg: 'bg-[#BE4C00]/10 hover:bg-[#BE4C00]/20 text-[#BE4C00] border-[#BE4C00]/10'
   },
   {
-    title: 'Machine Learning & AI',
-    description: 'Specialized mathematical libraries, neural network pipelines, and feature engineering tools.',
+    title: 'ML, Deep Learning & MLOps',
+    description: 'Specialized mathematical libraries, GPU data acceleration, neural networks, and MLOps workflows.',
     icon: <AnimatedBrain />,
     skills: [
-      'Scikit-learn', 'NumPy', 'Pandas', 'Matplotlib', 'Seaborn', 
-      'EDA', 'Feature Engineering', 'Predictive Modeling', 
-      'Supervised Learning', 'Model Evaluation', 'NLP', 
-      'Deep Learning', 'Generative AI (Gemini AI)'
+      'Scikit-learn', 'PyTorch', 'TensorFlow', 'Keras', 
+      'Pandas', 'NumPy', 'NVIDIA cuDF', 'Matplotlib', 
+      'Feature Engineering', 'Model Evaluation & Tuning', 'MLOps'
     ],
     glowColor: 'from-[#B600A8]/40 to-[#7621B0]/40',
     badgeBg: 'bg-[#B600A8]/10 hover:bg-[#B600A8]/20 text-[#B600A8] border-[#B600A8]/10'
   },
   {
-    title: 'Web & Cloud Deployment',
-    description: 'Frameworks, environments, and frontend tech utilized to deploy models, establish REST APIs, and host systems.',
+    title: 'GenAI, CV & NLP',
+    description: 'Retrieval-Augmented Generation, vector database embeddings, vision pipelines, and LLM reasoning.',
     icon: <AnimatedCloud />,
     skills: [
-      'Flask', 'Express.js', 'React/Vite', 'REST APIs', 
-      'Google Cloud (BigQuery, Cloud Run)', 'Render Cloud', 
-      'Oracle Cloud (OCI)', 'Databricks', 'Docker', 'HTML/CSS'
+      'LLMs (Gemini)', 'RAG Architecture', 'ChromaDB', 
+      'Prompt Engineering', 'OpenCV', 'NLP', 
+      'Image Classification', 'Object Detection'
     ],
     glowColor: 'from-[#00A8FF]/40 to-[#0077B5]/40',
     badgeBg: 'bg-[#00A8FF]/10 hover:bg-[#00A8FF]/20 text-[#00A8FF] border-[#00A8FF]/10'
   },
   {
-    title: 'Developer Tools & DBs',
-    description: 'Version control platforms, development setups, and relational / non-relational database storage.',
+    title: 'Backend, Cloud & Analytics',
+    description: 'Production microservices, secure authentication, cloud infrastructure, and business intelligence.',
     icon: <AnimatedDatabase />,
-    skills: ['Git', 'GitHub', 'Firebase Auth', 'Jupyter Notebook', 'VS Code', 'MongoDB', 'SQLite', 'MySQL'],
+    skills: [
+      'FastAPI', 'Flask', 'Express.js', 'REST APIs', 
+      'JWT Authentication', 'Docker', 'Google Cloud (BigQuery, Cloud Run)', 
+      'Oracle Cloud (OCI)', 'AWS', 'Databricks', 
+      'PostgreSQL', 'Power BI', 'Tableau', 'Git & GitHub', 'Jupyter Notebook'
+    ],
     glowColor: 'from-[#00B68A]/40 to-[#2E7D32]/40',
     badgeBg: 'bg-[#00B68A]/10 hover:bg-[#00B68A]/20 text-[#00B68A] border-[#00B68A]/10'
   }

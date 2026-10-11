@@ -19,15 +19,29 @@ const timelineData: TimelineItem[] = [
   {
     type: 'experience',
     title: 'Machine Learning Intern',
+    organization: 'Valentius Kryptix',
+    period: 'Sep 2026 – Present',
+    location: 'Remote',
+    description:
+      'Implementing foundational machine learning algorithms from scratch and benchmarking supervised models on real-world datasets.',
+    highlights: [
+      'Implementing linear regression from scratch in NumPy (gradient descent, MSE cost) for single- and multi-feature inputs; verifying MSE and R² against scikit-learn',
+      'Benchmarking five supervised algorithms on one real-world dataset with identical splits and preprocessing; ranking results by evaluation metrics in public GitHub repositories',
+    ],
+    icon: <Briefcase size={20} />,
+    accentColor: '#00A8FF',
+  },
+  {
+    type: 'experience',
+    title: 'Machine Learning Intern',
     organization: 'SaiKet Systems',
     period: 'Dec 2025 – Jan 2026',
     location: 'Remote',
     description:
       'Engineered an end-to-end customer churn prediction pipeline on enterprise telecommunications data.',
     highlights: [
-      'Implemented data preprocessing, categorical encoding, and stratified 80/20 train-test splits',
-      'Executed feature engineering on contract type, tenure, and monthly charges to isolate key retention drivers',
-      'Trained & benchmarked Logistic Regression, Decision Trees, Random Forests, and Gradient Boosting via Scikit-learn',
+      'Built an end-to-end telecom churn pipeline: preprocessing, categorical encoding, stratified 80/20 split, and features from contract type, tenure, and monthly charges',
+      'Compared four classifiers (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting) on ROC-AUC, precision, recall, and F1-score using scikit-learn',
     ],
     icon: <Briefcase size={20} />,
     accentColor: '#B600A8',
@@ -39,14 +53,13 @@ const timelineData: TimelineItem[] = [
     period: 'Nov 2025 – Jan 2026',
     location: 'Hyderabad, India',
     description:
-      'Built end-to-end ML workflows on real-world datasets using Python, Pandas, NumPy, and Scikit-learn.',
+      'Developed production-grade ML pipelines for tabular datasets (ingestion, cleaning, transformation) with Python, Pandas, and NumPy.',
     highlights: [
-      'Applied data preprocessing, feature engineering, and model evaluation (accuracy, precision, recall, F1-score)',
-      'Worked on supervised learning pipelines — classification & regression — and predictive analytics tasks',
-      'Strengthened collaborative coding and documentation practices in a remote team environment',
+      'Developed production-grade ML pipelines for tabular datasets (ingestion, cleaning, transformation) with Python, Pandas, and NumPy',
+      'Raised accuracy and F1 across classification and regression models via iterative EDA and model comparison; documented pipeline architecture and results',
     ],
     icon: <Briefcase size={20} />,
-    accentColor: '#B600A8',
+    accentColor: '#BE4C00',
   },
   {
     type: 'education',

@@ -45,7 +45,14 @@ const certificationsData: Certification[] = [
     issuer: 'Databricks',
     icon: <Sparkles size={24} />,
     accentColor: '#FF3621',
-    description: 'Understanding Generative AI frameworks, LLM capabilities, basic prompt engineering, and modern vector storage architectures.',
+    description: 'Understanding Generative AI frameworks, LLM capabilities, prompt engineering, and modern vector storage architectures.',
+  },
+  {
+    name: 'Google Cloud Gen AI Academy APAC',
+    issuer: 'Google Cloud & Hack2skill (2026)',
+    icon: <Medal size={24} />,
+    accentColor: '#4285F4',
+    description: 'Completed Cohort 2 building production GenAI solutions. Winner/finalist in React Hyderabad Buildathon & Hack The League (Jaipur).',
   },
 ];
 

@@ -17,19 +17,19 @@ interface Project {
 const projectsData: Project[] = [
   {
     num: '01',
-    category: 'Full-Stack GenAI Platform',
-    name: 'internAI — AI Resume & Matching Platform',
-    description: 'Engineered a full-stack platform at Gen AI Academy APAC Hackathon, integrating Google Gemini AI for automated resume parsing, ATS scoring, and high-performance applicant matching.',
-    stack: ['Python', 'Flask', 'Gemini AI', 'Google BigQuery', 'NVIDIA cuDF', 'Docker', 'Render'],
+    category: 'GenAI & RAG Platform',
+    name: 'IntelliDoc-AI — RAG Document Platform',
+    description: 'Launched a full-stack Retrieval-Augmented Generation (RAG) platform that answers questions from uploaded PDFs with context-grounded responses, deployed on Vercel with Neon PostgreSQL.',
+    stack: ['Python', 'FastAPI', 'ChromaDB', 'React.js', 'Neon PostgreSQL', 'SQLAlchemy', 'JWT / Argon2', 'Vercel'],
     metrics: [
-      'Engineered a full-stack platform at Gen AI Academy APAC Hackathon, integrating Google Gemini AI for resume parsing & ATS scoring',
-      'Benchmarked a GPU-accelerated NVIDIA cuDF data pipeline against Pandas over 100,000 records, cutting latency from 4.35s to 0.24s (an 18.5x speedup)',
-      'Architected 5 Flask REST API endpoints with Google Cloud BigQuery persistence, containerized via Docker on Render'
+      'Launched a full-stack RAG platform answering questions from uploaded PDFs with context-grounded responses; deployed on Vercel with Neon PostgreSQL',
+      'Designed the document pipeline for PDF text extraction, chunking, embedding generation, and semantic retrieval through ChromaDB',
+      'Secured a FastAPI/SQLAlchemy backend with JWT and Argon2 authentication and role-based access control'
     ],
     images: [
       '/ml_code.png',       // Left Top
-      '/dataset_grid.png',  // Left Bottom
-      '/project3_main.png',  // Right Main Showcase
+      '/terminal_logs.png', // Left Bottom
+      '/project3_main.png', // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
     linkLabel: 'Live Demo / GitHub',
@@ -41,36 +41,36 @@ const projectsData: Project[] = [
     description: 'Trained and evaluated Scikit-learn regression models across 47,840 NYC Airbnb listings to forecast nightly prices, deploying a production-ready Flask REST API with a responsive React/Vite web interface.',
     stack: ['Python', 'Scikit-learn', 'Flask', 'React.js', 'Vite', 'Docker', 'Render', 'Vercel'],
     metrics: [
-      'Trained & evaluated 4 Scikit-learn regression models across 47,840 NYC Airbnb listings; scoped outlier boundaries ($10–$500) to optimize generalization',
-      'Selected Extra Trees Regressor as top-performing production model achieving R² of 0.51 and MAE of $38.55',
-      'Deployed a Dockerized Flask REST API backend on Render with a responsive React/Vite interface on Vercel'
+      'Trained and evaluated 4 Scikit-learn regression models on 47,840 NYC listings to forecast nightly price; limited outliers to $10–$500 to improve generalization',
+      'Selected Extra Trees Regressor as the production model, reaching R² of 0.51 and MAE of $38.55',
+      'Deployed a Dockerized Flask REST API on Render with a responsive React/Vite interface on Vercel'
     ],
     images: [
       '/ml_code.png',       // Left Top
       '/terminal_logs.png', // Left Bottom
-      '/project1_main.png',  // Right Main Showcase
+      '/project1_main.png', // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
     linkLabel: 'Live Demo / GitHub',
   },
   {
     num: '03',
-    category: 'Classification & Churn Analytics',
-    name: 'Customer Churn Prediction Pipeline',
-    description: 'Engineered an end-to-end customer churn prediction pipeline on enterprise telecommunications data, isolating key retention drivers and benchmarking ensemble models for maximum ROC-AUC and recall.',
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Random Forest', 'Gradient Boosting', 'EDA'],
+    category: 'Full-Stack GenAI Platform',
+    name: 'internAI — AI Resume & Matching Platform',
+    description: 'Engineered a full-stack resume-parsing and ATS-scoring platform using Google Gemini at the Gen AI Academy APAC Hackathon, with GPU-accelerated cuDF analytics.',
+    stack: ['Python', 'Flask', 'Gemini AI', 'Google BigQuery', 'NVIDIA cuDF', 'Docker', 'Render'],
     metrics: [
-      'Engineered an end-to-end customer churn pipeline on enterprise telecom data with stratified 80/20 train-test splits & categorical encoding',
-      'Isolated highest-leverage retention indicators (contract type, tenure, monthly charges) through targeted feature engineering',
-      'Trained & benchmarked Logistic Regression, Decision Trees, Random Forests & Gradient Boosting models across ROC-AUC, precision & F1-score'
+      'Engineered a full-stack resume-parsing and ATS-scoring platform using Google Gemini for the Gen AI Academy APAC Hackathon',
+      'Benchmarked an NVIDIA cuDF pipeline against Pandas on 100,000 records, cutting latency from 4.35s to 0.24s (18.5x speedup)',
+      'Architected 5 Flask REST endpoints with BigQuery persistence; containerized with Docker and hosted on Render'
     ],
     images: [
       '/ml_code.png',       // Left Top
-      '/terminal_logs.png', // Left Bottom
-      '/project2_main.png',  // Right Main Showcase
+      '/dataset_grid.png',  // Left Bottom
+      '/project2_main.png', // Right Main Showcase
     ],
     link: 'https://github.com/shaikhadnan0123',
-    linkLabel: 'GitHub Code',
+    linkLabel: 'Live Demo / GitHub',
   },
 ];
 
