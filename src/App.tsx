@@ -5,9 +5,7 @@ import { PageLoader } from './components/PageLoader';
 import { Navbar } from './components/Navbar';
 import { CustomCursor } from './components/CustomCursor';
 import { HeroSection } from './components/HeroSection';
-import { MarqueeSection } from './components/MarqueeSection';
 import { AboutSection } from './components/AboutSection';
-import { ServicesSection } from './components/ServicesSection';
 import { SkillsSection } from './components/SkillsSection';
 import { TimelineSection } from './components/TimelineSection';
 import { CertificationsSection } from './components/CertificationsSection';
@@ -43,16 +41,10 @@ function App() {
           {/* 1. Hero Section */}
           <HeroSection />
 
-          {/* 2. Marquee Section */}
-          <MarqueeSection />
-
-          {/* 3. About Section */}
+          {/* 2. About Section */}
           <AboutSection />
 
-          {/* 4. Expertise Section */}
-          <ServicesSection />
-
-          {/* 4.5. Skills Section */}
+          {/* 3. Skills Section */}
           <SkillsSection />
 
           {/* 5. Journey / Timeline Section */}
