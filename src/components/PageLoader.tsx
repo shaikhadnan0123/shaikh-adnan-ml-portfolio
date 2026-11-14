@@ -29,11 +29,11 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
         onAnimationComplete={() => {
           if (phase === 'exit') onComplete();
         }}
-        className="fixed inset-0 z-[9998] bg-[#0C0C0C] flex flex-col items-center justify-center select-none"
+        className="fixed inset-0 z-[9998] bg-[#1A2A1A] flex flex-col items-center justify-center select-none"
       >
         {/* Ambient glow */}
-        <div className="absolute w-[300px] h-[300px] rounded-full bg-[#B600A8]/20 blur-[120px] pointer-events-none" />
-        <div className="absolute w-[200px] h-[200px] rounded-full bg-[#7621B0]/15 blur-[100px] pointer-events-none translate-x-20 translate-y-10" />
+        <div className="absolute w-[300px] h-[300px] rounded-full bg-[#789575]/20 blur-[120px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] rounded-full bg-[#5A7A58]/15 blur-[100px] pointer-events-none translate-x-20 translate-y-10" />
 
         {/* Name animation */}
         <motion.div
@@ -56,7 +56,7 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 0.6, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-[#D7E2EA] text-xs sm:text-sm uppercase tracking-[0.3em] font-light"
+            className="text-[#E5E8CE] text-xs sm:text-sm uppercase tracking-[0.3em] font-light"
           >
             Machine Learning Engineer
           </motion.p>
@@ -66,7 +66,7 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
             <motion.div
               className="h-full rounded-full"
               style={{
-                background: 'linear-gradient(90deg, #B600A8, #7621B0, #BE4C00)',
+                background: 'linear-gradient(90deg, #789575, #5A7A58, #E5E8CE)',
               }}
               initial={{ width: '0%' }}
               animate={{ width: '100%' }}

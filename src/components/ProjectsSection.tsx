@@ -108,19 +108,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
           zIndex: 10 + index,
           willChange: 'transform',
         }}
-        className="sticky w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-6 sm:p-8 flex flex-col gap-6 justify-between h-auto top-24 md:top-32"
+        className="sticky w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#E5E8CE] bg-[#1A2A1A] p-6 sm:p-8 flex flex-col gap-6 justify-between h-auto top-24 md:top-32"
       >
         {/* Top Row: Index, Category, Name & Ghost LiveProjectButton */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full">
           <div className="flex items-center gap-4 sm:gap-6">
-            <span className="font-black text-[#D7E2EA] text-[clamp(2.5rem,8vw,90px)] leading-none select-none">
+            <span className="font-black text-[#E5E8CE] text-[clamp(2.5rem,8vw,90px)] leading-none select-none">
               {project.num}
             </span>
             <div className="flex flex-col text-left">
-              <span className="text-[#D7E2EA] opacity-60 text-xs sm:text-sm uppercase tracking-wider font-light">
+              <span className="text-[#E5E8CE] opacity-60 text-xs sm:text-sm uppercase tracking-wider font-light">
                 {project.category}
               </span>
-              <h4 className="text-[#D7E2EA] font-semibold text-lg sm:text-xl md:text-2xl uppercase">
+              <h4 className="text-[#E5E8CE] font-semibold text-lg sm:text-xl md:text-2xl uppercase">
                 {project.name}
               </h4>
             </div>
@@ -133,7 +133,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
           {/* Details Column (5 cols of 12) */}
           <div className="lg:col-span-5 flex flex-col gap-6 justify-between text-left">
             <div>
-              <p className="text-[#D7E2EA]/80 font-light text-sm sm:text-base leading-relaxed mb-6">
+              <p className="text-[#E5E8CE]/80 font-light text-sm sm:text-base leading-relaxed mb-6">
                 {project.description}
               </p>
               
@@ -142,7 +142,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                 {project.stack.map((tech, tIdx) => (
                   <span
                     key={tIdx}
-                    className="text-[10px] sm:text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-[#D7E2EA]/10 bg-[#121212]/80 text-[#D7E2EA]/70 hover:border-[#B600A8]/40 hover:text-white transition-all duration-300 cursor-default"
+                    className="text-[10px] sm:text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold border border-[#E5E8CE]/10 bg-[#121212]/80 text-[#E5E8CE]/70 hover:border-[#789575]/40 hover:text-white transition-all duration-300 cursor-default"
                   >
                     {tech}
                   </span>
@@ -152,13 +152,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
 
             {/* Key Achievements/Metrics */}
             <div className="flex flex-col gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/5 shadow-inner">
-              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#B600A8] font-bold">
+              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#789575] font-bold">
                 Key Metrics & Impact
               </span>
               <div className="flex flex-col gap-2">
                 {project.metrics.map((metric, mIdx) => (
-                  <div key={mIdx} className="flex items-start gap-2.5 text-xs text-[#D7E2EA]/75">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00B68A] mt-1.5 flex-shrink-0" />
+                  <div key={mIdx} className="flex items-start gap-2.5 text-xs text-[#E5E8CE]/75">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#A4B89E] mt-1.5 flex-shrink-0" />
                     <span>{metric}</span>
                   </div>
                 ))}
@@ -174,14 +174,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
                 src={project.images[0]}
                 alt={`${project.name} view 1`}
                 style={{ height: 'clamp(90px, 11vw, 150px)' }}
-                className="w-full rounded-[20px] sm:rounded-[28px] object-cover border border-[#D7E2EA]/10"
+                className="w-full rounded-[20px] sm:rounded-[28px] object-cover border border-[#E5E8CE]/10"
                 loading="lazy"
               />
               <img
                 src={project.images[1]}
                 alt={`${project.name} view 2`}
                 style={{ height: 'clamp(110px, 14vw, 210px)' }}
-                className="w-full rounded-[20px] sm:rounded-[28px] object-cover border border-[#D7E2EA]/10"
+                className="w-full rounded-[20px] sm:rounded-[28px] object-cover border border-[#E5E8CE]/10"
                 loading="lazy"
               />
             </div>
@@ -191,7 +191,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, totalCards })
               <img
                 src={project.images[2]}
                 alt={`${project.name} main showcase`}
-                className="w-full rounded-[20px] sm:rounded-[28px] object-cover border border-[#D7E2EA]/10 min-h-[180px] sm:min-h-full"
+                className="w-full rounded-[20px] sm:rounded-[28px] object-cover border border-[#E5E8CE]/10 min-h-[180px] sm:min-h-full"
                 loading="lazy"
               />
             </div>
@@ -206,7 +206,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="relative w-full bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 pt-20 pb-32 z-10 select-none"
+      className="relative w-full bg-[#1A2A1A] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 pt-20 pb-32 z-10 select-none"
     >
       <div className="max-w-5xl mx-auto flex flex-col">
         {/* Section Heading */}

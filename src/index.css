@@ -12,8 +12,8 @@
   html,
   body,
   #root {
-    background-color: #0C0C0C;
-    color: #D7E2EA;
+    background-color: #1A2A1A;
+    color: #E5E8CE;
     font-family: 'Inter', 'Kanit', sans-serif;
     min-height: 100vh;
     overflow-x: clip;
@@ -25,25 +25,25 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0C0C0C;
+    background: #1A2A1A;
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #B600A8, #7621B0);
+    background: linear-gradient(180deg, #789575, #5A7A58);
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #d400c4, #9b3de0);
+    background: linear-gradient(180deg, #8CAA87, #6B8F69);
   }
 
   /* Firefox scrollbar */
   html {
     scrollbar-width: thin;
-    scrollbar-color: #7621B0 #0C0C0C;
+    scrollbar-color: #5A7A58 #1A2A1A;
   }
 
   /* Selection */
   ::selection {
-    background: rgba(182, 0, 168, 0.35);
+    background: rgba(120, 149, 117, 0.35);
     color: #ffffff;
   }
 
@@ -66,7 +66,7 @@
    HEADING GRADIENT
    ================================ */
 .hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  background: linear-gradient(180deg, #5A7A58 0%, #E5E8CE 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -150,8 +150,8 @@
    ================================ */
 .animated-grid-bg {
   background-image:
-    linear-gradient(rgba(182, 0, 168, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(182, 0, 168, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(120, 149, 117, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 149, 117, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: grid-move 20s linear infinite;
 }
@@ -176,7 +176,7 @@
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, #B600A8, #7621B0, #BE4C00);
+  background: linear-gradient(135deg, #789575, #5A7A58, #6B8F69);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -184,10 +184,10 @@
 
 /* Glassmorphism */
 .glass {
-  background: rgba(12, 12, 12, 0.6);
+  background: rgba(26, 42, 26, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(215, 226, 234, 0.08);
+  border: 1px solid rgba(229, 232, 206, 0.08);
 }
 
 /* Noise texture overlay */
@@ -210,5 +210,5 @@
 /* Section divider glow line */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(182, 0, 168, 0.4), rgba(118, 33, 176, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(120, 149, 117, 0.4), rgba(90, 122, 88, 0.4), transparent);
 }

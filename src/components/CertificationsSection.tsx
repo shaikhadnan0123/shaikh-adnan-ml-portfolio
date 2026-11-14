@@ -30,7 +30,7 @@ const certificationsData: Certification[] = [
     name: 'Machine Learning Internship',
     issuer: 'The SmartBridge (Certified)',
     icon: <Briefcase size={24} />,
-    accentColor: '#B600A8',
+    accentColor: '#789575',
     description: 'Practical training on real-world datasets, deploying end-to-end ML models, outlier cleaning, validation splits, and model evaluations.',
   },
   {
@@ -77,11 +77,11 @@ export const CertificationsSection: React.FC = () => {
   return (
     <section
       id="certifications"
-      className="relative w-full bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
     >
       {/* Soft ambient background glows */}
-      <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-[#B600A8]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-[#7621B0]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-[#789575]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-[#5A7A58]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto flex flex-col relative z-10">
         {/* Section Heading */}
@@ -92,7 +92,7 @@ export const CertificationsSection: React.FC = () => {
         </FadeIn>
 
         <FadeIn delay={0.1} y={20}>
-          <p className="text-[#D7E2EA]/50 text-center text-xs sm:text-sm uppercase tracking-[0.2em] font-light mb-16 sm:mb-20 md:mb-24 max-w-lg mx-auto">
+          <p className="text-[#E5E8CE]/50 text-center text-xs sm:text-sm uppercase tracking-[0.2em] font-light mb-16 sm:mb-20 md:mb-24 max-w-lg mx-auto">
             Professional validations of my technical expertise
           </p>
         </FadeIn>
@@ -153,16 +153,16 @@ export const CertificationsSection: React.FC = () => {
 
                 {/* Name & Description */}
                 <div className="flex flex-col gap-2">
-                  <h3 className="font-semibold text-sm sm:text-base text-[#D7E2EA] group-hover:text-white transition-colors duration-300 line-clamp-2 h-12 flex items-center">
+                  <h3 className="font-semibold text-sm sm:text-base text-[#E5E8CE] group-hover:text-white transition-colors duration-300 line-clamp-2 h-12 flex items-center">
                     {cert.name}
                   </h3>
-                  <p className="text-[#D7E2EA]/60 font-light text-xs sm:text-sm leading-relaxed mt-1">
+                  <p className="text-[#E5E8CE]/60 font-light text-xs sm:text-sm leading-relaxed mt-1">
                     {cert.description}
                   </p>
                 </div>
 
                 {/* Bottom detail / Decoration */}
-                <div className="mt-auto pt-4 border-t border-white/[0.05] flex items-center justify-between text-[#D7E2EA]/40 group-hover:text-[#D7E2EA]/60 transition-colors duration-300">
+                <div className="mt-auto pt-4 border-t border-white/[0.05] flex items-center justify-between text-[#E5E8CE]/40 group-hover:text-[#E5E8CE]/60 transition-colors duration-300">
                   <span className="text-[9px] uppercase tracking-widest font-mono">
                     Verified Credential
                   </span>

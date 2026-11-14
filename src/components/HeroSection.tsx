@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { FadeIn } from './FadeIn';
 import { Magnet } from './Magnet';
 import { ContactButton } from './ContactButton';
 
 export const HeroSection: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      const x = (clientX / innerWidth - 0.5) * 40;
-      const y = (clientY / innerHeight - 0.5) * 40;
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -28,32 +12,14 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip select-none bg-[#0C0C0C]">
+    <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip select-none bg-[#1A2A1A]">
       
-      {/* Background Interactive Photo Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.25]">
-        <motion.div
-          animate={{
-            x: mousePosition.x,
-            y: mousePosition.y,
-            scale: [1.08, 1.12, 1.08],
-          }}
-          transition={{
-            x: { type: 'spring', stiffness: 45, damping: 20 },
-            y: { type: 'spring', stiffness: 45, damping: 20 },
-            scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' }
-          }}
-          className="absolute inset-0 w-full h-full bg-cover bg-no-repeat"
-          style={{ 
-            backgroundImage: 'url("/adnan.jpg")',
-            backgroundPosition: 'center 18%',
-            transformOrigin: 'center 18%'
-          }}
-        />
-        {/* Gradients overlay to blend with #0C0C0C background */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0C0C] via-transparent to-[#0C0C0C]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] via-transparent to-[#0C0C0C]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#0C0C0C_85%)]" />
+      {/* Background Subtle Gradient Layer (no photo) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.15]">
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#789575]/20 via-transparent to-[#5A7A58]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A2A1A] via-transparent to-[#1A2A1A]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A2A1A] via-transparent to-[#1A2A1A]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#1A2A1A_85%)]" />
       </div>
       
       {/* Spacer for sticky navbar */}
@@ -63,10 +29,10 @@ export const HeroSection: React.FC = () => {
       <div className="w-full overflow-hidden flex items-center justify-center z-0 flex-grow">
         <FadeIn as="div" delay={0.15} y={40} className="w-full text-center flex flex-col items-center justify-center px-4">
           {/* Recruitment Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(182,0,168,0.15)]">
-            <span className="w-2 h-2 rounded-full bg-[#00B68A] animate-ping" />
-            <span className="w-2 h-2 rounded-full bg-[#00B68A] absolute" />
-            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#D7E2EA]/90 font-medium">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(120,149,117,0.15)]">
+            <span className="w-2 h-2 rounded-full bg-[#A4B89E] animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-[#A4B89E] absolute" />
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#E5E8CE]/90 font-medium">
               Actively Seeking ML Intern / Fresher Roles | Hyderabad & Remote
             </span>
           </div>
@@ -102,7 +68,7 @@ export const HeroSection: React.FC = () => {
           as="p"
           delay={0.35}
           y={20}
-          className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-left"
+          className="text-[#E5E8CE] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-left"
         >
           <span style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}>
             a startup-ready AI & ML engineer specializing in predictive modeling & full-stack deployment

@@ -6,7 +6,7 @@ import { FadeIn } from './FadeIn';
 // Animated Terminal Icon for Programming Languages
 const AnimatedTerminal = () => {
   return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#BE4C00]/10 text-[#BE4C00]">
+    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#6B8F69]/10 text-[#6B8F69]">
       <motion.div
         animate={{
           scale: [1, 1.05, 1],
@@ -18,7 +18,7 @@ const AnimatedTerminal = () => {
       <motion.span
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 1, repeat: Infinity }}
-        className="absolute bottom-2.5 right-3 w-1.5 h-3 bg-[#BE4C00]"
+        className="absolute bottom-2.5 right-3 w-1.5 h-3 bg-[#6B8F69]"
       />
     </div>
   );
@@ -27,14 +27,14 @@ const AnimatedTerminal = () => {
 // Animated Brain Icon for ML/AI
 const AnimatedBrain = () => {
   return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#B600A8]/10 text-[#B600A8]">
+    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#789575]/10 text-[#789575]">
       <motion.div
         animate={{
           scale: [1, 1.1, 1],
           filter: [
-            'drop-shadow(0 0 2px rgba(182, 0, 168, 0.2))',
-            'drop-shadow(0 0 8px rgba(182, 0, 168, 0.5))',
-            'drop-shadow(0 0 2px rgba(182, 0, 168, 0.2))',
+            'drop-shadow(0 0 2px rgba(120, 149, 117, 0.2))',
+            'drop-shadow(0 0 8px rgba(120, 149, 117, 0.5))',
+            'drop-shadow(0 0 2px rgba(120, 149, 117, 0.2))',
           ],
         }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -49,7 +49,7 @@ const AnimatedBrain = () => {
           opacity: [0.3, 0.9, 0.3],
         }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1.5 right-2.5 w-1.5 h-1.5 rounded-full bg-[#7621B0]"
+        className="absolute top-1.5 right-2.5 w-1.5 h-1.5 rounded-full bg-[#5A7A58]"
       />
       <motion.div
         animate={{
@@ -58,7 +58,7 @@ const AnimatedBrain = () => {
           opacity: [0.3, 0.9, 0.3],
         }}
         transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-2 left-2 w-1 h-1 rounded-full bg-[#B600A8]"
+        className="absolute bottom-2 left-2 w-1 h-1 rounded-full bg-[#789575]"
       />
     </div>
   );
@@ -67,7 +67,7 @@ const AnimatedBrain = () => {
 // Animated Cloud Icon for Web & Cloud Deployment
 const AnimatedCloud = () => {
   return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#00A8FF]/10 text-[#00A8FF]">
+    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#8CAA87]/10 text-[#8CAA87]">
       <motion.div
         animate={{
           y: [0, -3, 0],
@@ -81,7 +81,7 @@ const AnimatedCloud = () => {
         initial={{ x: -6, opacity: 0 }}
         animate={{ x: 6, opacity: [0, 0.8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'linear', delay: 0.5 }}
-        className="absolute bottom-2.5 left-3 w-3 h-0.5 bg-[#00A8FF]/60 rounded"
+        className="absolute bottom-2.5 left-3 w-3 h-0.5 bg-[#8CAA87]/60 rounded"
       />
     </div>
   );
@@ -90,7 +90,7 @@ const AnimatedCloud = () => {
 // Animated Database Icon for Databases & Tools
 const AnimatedDatabase = () => {
   return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#00B68A]/10 text-[#00B68A]">
+    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#A4B89E]/10 text-[#A4B89E]">
       <motion.div
         animate={{
           scale: [1, 1.04, 1],
@@ -105,14 +105,14 @@ const AnimatedDatabase = () => {
           opacity: [0.3, 1, 0.3],
         }}
         transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-[17px] top-[17px] w-1 h-1 rounded-full bg-[#00B68A]"
+        className="absolute right-[17px] top-[17px] w-1 h-1 rounded-full bg-[#A4B89E]"
       />
       <motion.div
         animate={{
           opacity: [1, 0.3, 1],
         }}
         transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-[17px] top-[24px] w-1 h-1 rounded-full bg-[#00B68A]"
+        className="absolute right-[17px] top-[24px] w-1 h-1 rounded-full bg-[#A4B89E]"
       />
     </div>
   );
@@ -133,8 +133,8 @@ const skillsData: SkillGroup[] = [
     description: 'Core programming languages and modern frontend tooling for intelligent AI-driven applications.',
     icon: <AnimatedTerminal />,
     skills: ['Python', 'JavaScript', 'SQL', 'HTML/CSS', 'React', 'Vite'],
-    glowColor: 'from-[#BE4C00]/40 to-[#B60050]/40',
-    badgeBg: 'bg-[#BE4C00]/10 hover:bg-[#BE4C00]/20 text-[#BE4C00] border-[#BE4C00]/10'
+    glowColor: 'from-[#6B8F69]/40 to-[#789575]/40',
+    badgeBg: 'bg-[#6B8F69]/10 hover:bg-[#6B8F69]/20 text-[#6B8F69] border-[#6B8F69]/10'
   },
   {
     title: 'ML, Deep Learning & MLOps',
@@ -145,8 +145,8 @@ const skillsData: SkillGroup[] = [
       'Pandas', 'NumPy', 'NVIDIA cuDF', 'Matplotlib', 
       'Feature Engineering', 'Model Evaluation & Tuning', 'MLOps'
     ],
-    glowColor: 'from-[#B600A8]/40 to-[#7621B0]/40',
-    badgeBg: 'bg-[#B600A8]/10 hover:bg-[#B600A8]/20 text-[#B600A8] border-[#B600A8]/10'
+    glowColor: 'from-[#789575]/40 to-[#5A7A58]/40',
+    badgeBg: 'bg-[#789575]/10 hover:bg-[#789575]/20 text-[#789575] border-[#789575]/10'
   },
   {
     title: 'GenAI, CV & NLP',
@@ -157,8 +157,8 @@ const skillsData: SkillGroup[] = [
       'Prompt Engineering', 'OpenCV', 'NLP', 
       'Image Classification', 'Object Detection'
     ],
-    glowColor: 'from-[#00A8FF]/40 to-[#0077B5]/40',
-    badgeBg: 'bg-[#00A8FF]/10 hover:bg-[#00A8FF]/20 text-[#00A8FF] border-[#00A8FF]/10'
+    glowColor: 'from-[#8CAA87]/40 to-[#789575]/40',
+    badgeBg: 'bg-[#8CAA87]/10 hover:bg-[#8CAA87]/20 text-[#8CAA87] border-[#8CAA87]/10'
   },
   {
     title: 'Backend, Cloud & Analytics',
@@ -170,8 +170,8 @@ const skillsData: SkillGroup[] = [
       'Oracle Cloud (OCI)', 'AWS', 'Databricks', 
       'PostgreSQL', 'Power BI', 'Tableau', 'Git & GitHub', 'Jupyter Notebook'
     ],
-    glowColor: 'from-[#00B68A]/40 to-[#2E7D32]/40',
-    badgeBg: 'bg-[#00B68A]/10 hover:bg-[#00B68A]/20 text-[#00B68A] border-[#00B68A]/10'
+    glowColor: 'from-[#A4B89E]/40 to-[#789575]/40',
+    badgeBg: 'bg-[#A4B89E]/10 hover:bg-[#A4B89E]/20 text-[#A4B89E] border-[#A4B89E]/10'
   }
 ];
 
@@ -179,11 +179,11 @@ export const SkillsSection: React.FC = () => {
   return (
     <section
       id="skills"
-      className="relative w-full bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
     >
       {/* Decorative ambient background glows */}
-      <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-[#B600A8]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-[#7621B0]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-[#789575]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-[#5A7A58]/10 blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto flex flex-col relative z-10">
         {/* Section Heading */}
@@ -217,13 +217,13 @@ export const SkillsSection: React.FC = () => {
                     {/* Card Header */}
                     <div className="flex items-center gap-4 mb-5">
                       {group.icon}
-                      <h3 className="font-semibold text-lg sm:text-xl uppercase tracking-wide text-[#D7E2EA]">
+                      <h3 className="font-semibold text-lg sm:text-xl uppercase tracking-wide text-[#E5E8CE]">
                         {group.title}
                       </h3>
                     </div>
 
                     {/* Description */}
-                    <p className="text-[#D7E2EA]/60 font-light text-sm mb-6 leading-relaxed">
+                    <p className="text-[#E5E8CE]/60 font-light text-sm mb-6 leading-relaxed">
                       {group.description}
                     </p>
 

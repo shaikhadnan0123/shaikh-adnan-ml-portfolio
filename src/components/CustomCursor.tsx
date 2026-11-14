@@ -82,7 +82,7 @@ export const CustomCursor: React.FC = () => {
           height: isHovering ? 56 : 36,
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-        className="fixed top-0 left-0 rounded-full border border-[#B600A8]/40 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
+        className="fixed top-0 left-0 rounded-full border border-[#789575]/40 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
       />
       {/* Inner dot */}
       <motion.div
@@ -94,7 +94,7 @@ export const CustomCursor: React.FC = () => {
         animate={{
           width: isHovering ? 8 : 5,
           height: isHovering ? 8 : 5,
-          backgroundColor: isHovering ? '#B600A8' : '#D7E2EA',
+          backgroundColor: isHovering ? '#789575' : '#E5E8CE',
         }}
         transition={{ type: 'spring', stiffness: 500, damping: 28 }}
         className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"

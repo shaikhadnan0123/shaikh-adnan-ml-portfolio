@@ -29,7 +29,7 @@ const timelineData: TimelineItem[] = [
       'Benchmarking five supervised algorithms on one real-world dataset with identical splits and preprocessing; ranking results by evaluation metrics in public GitHub repositories',
     ],
     icon: <Briefcase size={20} />,
-    accentColor: '#00A8FF',
+    accentColor: '#8CAA87',
   },
   {
     type: 'experience',
@@ -44,7 +44,7 @@ const timelineData: TimelineItem[] = [
       'Compared four classifiers (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting) on ROC-AUC, precision, recall, and F1-score using scikit-learn',
     ],
     icon: <Briefcase size={20} />,
-    accentColor: '#B600A8',
+    accentColor: '#789575',
   },
   {
     type: 'experience',
@@ -59,7 +59,7 @@ const timelineData: TimelineItem[] = [
       'Raised accuracy and F1 across classification and regression models via iterative EDA and model comparison; documented pipeline architecture and results',
     ],
     icon: <Briefcase size={20} />,
-    accentColor: '#BE4C00',
+    accentColor: '#6B8F69',
   },
   {
     type: 'education',
@@ -75,7 +75,7 @@ const timelineData: TimelineItem[] = [
       'Affiliated with Osmania University',
     ],
     icon: <GraduationCap size={20} />,
-    accentColor: '#7621B0',
+    accentColor: '#5A7A58',
   },
   {
     type: 'education',
@@ -90,7 +90,7 @@ const timelineData: TimelineItem[] = [
       'MPC stream (Mathematics, Physics, Chemistry)',
     ],
     icon: <GraduationCap size={20} />,
-    accentColor: '#BE4C00',
+    accentColor: '#6B8F69',
   },
   {
     type: 'education',
@@ -104,7 +104,7 @@ const timelineData: TimelineItem[] = [
       'Secondary Education curriculum',
     ],
     icon: <GraduationCap size={20} />,
-    accentColor: '#00B68A',
+    accentColor: '#A4B89E',
   },
 ];
 
@@ -126,11 +126,11 @@ export const TimelineSection: React.FC = () => {
   return (
     <section
       id="timeline"
-      className="relative w-full bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
     >
       {/* Ambient background glows */}
-      <div className="absolute top-[15%] right-[-5%] w-[300px] h-[300px] rounded-full bg-[#7621B0]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[15%] left-[-5%] w-[300px] h-[300px] rounded-full bg-[#B600A8]/8 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[15%] right-[-5%] w-[300px] h-[300px] rounded-full bg-[#5A7A58]/8 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[15%] left-[-5%] w-[300px] h-[300px] rounded-full bg-[#789575]/8 blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto flex flex-col relative z-10">
         {/* Section Heading */}
@@ -143,7 +143,7 @@ export const TimelineSection: React.FC = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Center vertical line */}
-          <div className="absolute left-6 md:left-1/2 md:-translate-x-[0.5px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#D7E2EA]/15 to-transparent" />
+          <div className="absolute left-6 md:left-1/2 md:-translate-x-[0.5px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#E5E8CE]/15 to-transparent" />
 
           <div className="flex flex-col gap-16 md:gap-20">
             {timelineData.map((item, index) => (
@@ -171,7 +171,7 @@ export const TimelineSection: React.FC = () => {
                       ],
                     }}
                     transition={{ duration: 3, repeat: Infinity }}
-                    className="w-12 h-12 rounded-full flex items-center justify-center border-2 bg-[#0C0C0C]"
+                    className="w-12 h-12 rounded-full flex items-center justify-center border-2 bg-[#1A2A1A]"
                     style={{ borderColor: item.accentColor, color: item.accentColor }}
                   >
                     {item.icon}
@@ -213,15 +213,15 @@ export const TimelineSection: React.FC = () => {
                         {item.type}
                       </span>
 
-                      <h3 className="text-[#D7E2EA] font-semibold text-lg sm:text-xl mb-1">
+                      <h3 className="text-[#E5E8CE] font-semibold text-lg sm:text-xl mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-[#D7E2EA]/80 font-medium text-sm sm:text-base mb-3">
+                      <p className="text-[#E5E8CE]/80 font-medium text-sm sm:text-base mb-3">
                         {item.organization}
                       </p>
 
                       {/* Meta info */}
-                      <div className="flex flex-wrap items-center gap-4 mb-4 text-[#D7E2EA]/50 text-xs">
+                      <div className="flex flex-wrap items-center gap-4 mb-4 text-[#E5E8CE]/50 text-xs">
                         <span className="inline-flex items-center gap-1.5">
                           <Calendar size={12} />
                           {item.period}
@@ -232,7 +232,7 @@ export const TimelineSection: React.FC = () => {
                         </span>
                       </div>
 
-                      <p className="text-[#D7E2EA]/60 font-light text-sm leading-relaxed mb-5">
+                      <p className="text-[#E5E8CE]/60 font-light text-sm leading-relaxed mb-5">
                         {item.description}
                       </p>
 
@@ -241,7 +241,7 @@ export const TimelineSection: React.FC = () => {
                         {item.highlights.map((highlight, hIdx) => (
                           <div
                             key={hIdx}
-                            className="flex items-start gap-2.5 text-xs text-[#D7E2EA]/70"
+                            className="flex items-start gap-2.5 text-xs text-[#E5E8CE]/70"
                           >
                             <span
                               className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"

@@ -24,7 +24,7 @@ const profiles: ProfileCard[] = [
       { label: 'Contributions', value: '200+' },
       { label: 'Languages', value: '5+' },
     ],
-    accentColor: '#D7E2EA',
+    accentColor: '#E5E8CE',
     description:
       'Open source ML projects, end-to-end pipelines, and collaborative development.',
   },
@@ -38,7 +38,7 @@ const profiles: ProfileCard[] = [
       { label: 'Contest Rating', value: '1500+' },
       { label: 'Streak Days', value: '30+' },
     ],
-    accentColor: '#FFA116',
+    accentColor: '#789575',
     description:
       'Algorithmic problem solving in Python & C++, focused on data structures and optimization.',
   },
@@ -65,11 +65,11 @@ export const CodingProfilesSection: React.FC = () => {
   return (
     <section
       id="coding-profiles"
-      className="relative w-full bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
     >
       {/* Ambient background */}
-      <div className="absolute top-[30%] left-[-8%] w-[280px] h-[280px] rounded-full bg-[#FFA116]/6 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-8%] w-[280px] h-[280px] rounded-full bg-[#00B68A]/6 blur-[100px] pointer-events-none" />
+      <div className="absolute top-[30%] left-[-8%] w-[280px] h-[280px] rounded-full bg-[#789575]/6 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-8%] w-[280px] h-[280px] rounded-full bg-[#5A7A58]/6 blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto flex flex-col relative z-10">
         {/* Section Heading */}
@@ -80,7 +80,7 @@ export const CodingProfilesSection: React.FC = () => {
         </FadeIn>
 
         <FadeIn delay={0.1} y={20}>
-          <p className="text-[#D7E2EA]/50 text-center text-sm sm:text-base uppercase tracking-[0.15em] font-light mb-16 sm:mb-20 md:mb-24 max-w-lg mx-auto">
+          <p className="text-[#E5E8CE]/50 text-center text-sm sm:text-base uppercase tracking-[0.15em] font-light mb-16 sm:mb-20 md:mb-24 max-w-lg mx-auto">
             Where I code, contribute & compete
           </p>
         </FadeIn>
@@ -139,19 +139,19 @@ export const CodingProfilesSection: React.FC = () => {
                       >
                         {profile.platform}
                       </h3>
-                      <p className="text-[#D7E2EA]/50 text-xs font-mono">
+                      <p className="text-[#E5E8CE]/50 text-xs font-mono">
                         @{profile.username}
                       </p>
                     </div>
                   </div>
                   <ExternalLink
                     size={18}
-                    className="text-[#D7E2EA]/30 group-hover:text-[#D7E2EA]/70 transition-colors duration-300"
+                    className="text-[#E5E8CE]/30 group-hover:text-[#E5E8CE]/70 transition-colors duration-300"
                   />
                 </div>
 
                 {/* Description */}
-                <p className="text-[#D7E2EA]/55 font-light text-sm leading-relaxed">
+                <p className="text-[#E5E8CE]/55 font-light text-sm leading-relaxed">
                   {profile.description}
                 </p>
 
@@ -168,7 +168,7 @@ export const CodingProfilesSection: React.FC = () => {
                       >
                         {stat.value}
                       </span>
-                      <span className="text-[10px] text-[#D7E2EA]/40 uppercase tracking-wider font-medium">
+                      <span className="text-[10px] text-[#E5E8CE]/40 uppercase tracking-wider font-medium">
                         {stat.label}
                       </span>
                     </div>
@@ -189,7 +189,7 @@ export const CodingProfilesSection: React.FC = () => {
                         delay: i * 0.3,
                       }}
                     >
-                      <Icon size={12} className="text-[#D7E2EA]" />
+                      <Icon size={12} className="text-[#E5E8CE]" />
                     </motion.div>
                   ))}
                 </div>

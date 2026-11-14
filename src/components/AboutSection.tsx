@@ -7,7 +7,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen w-full bg-[#0C0C0C] flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden select-none"
+      className="relative min-h-screen w-full bg-[#1A2A1A] flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 overflow-hidden select-none"
     >
       
       {/* Decorative 3D images in corners */}
@@ -86,7 +86,7 @@ export const AboutSection: React.FC = () => {
         {/* Animated text paragraph */}
         <AnimatedText
           text="With a strong foundation in Artificial Intelligence and Machine Learning, I bridge the gap between AI theory and production software. I don't just build models in Jupyter Notebooks—I design end-to-end predictive systems, build FastAPI microservices, and construct responsive React web applications. Ready to deliver immediate engineering value on Day 1."
-          className="text-[#D7E2EA] font-medium leading-relaxed max-w-[720px] text-center text-[clamp(1rem,2vw,1.35rem)]"
+          className="text-[#E5E8CE] font-medium leading-relaxed max-w-[720px] text-center text-[clamp(1rem,2vw,1.35rem)]"
         />
 
         {/* Gap between text and button */}
@@ -102,10 +102,10 @@ export const AboutSection: React.FC = () => {
               }}
             />
             <a
-              href="/Adnan_Resume_Final.pdf"
+              href="/Shaikh_Adnan_CV_Achievements.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base inline-flex items-center justify-center select-none hover:bg-white/10 hover:border-white hover:text-white"
+              className="rounded-full border-2 border-[#E5E8CE] text-[#E5E8CE] font-medium uppercase tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base inline-flex items-center justify-center select-none hover:bg-white/10 hover:border-white hover:text-white"
             >
               View Resume
             </a>
