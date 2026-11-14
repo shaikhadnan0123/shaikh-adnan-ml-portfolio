@@ -81,32 +81,42 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('top')}
-            className="text-[#E5E8CE] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] transition-opacity duration-200 hover:opacity-70 z-10"
+            className="text-[#E5E8CE] font-bold tracking-tight text-lg md:text-xl transition-opacity duration-200 hover:opacity-80 z-10"
           >
-            Adnan
+            Shaikh Adnan
           </button>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-12">
+          <div className="hidden md:flex items-center gap-7 lg:gap-10">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-[#E5E8CE] font-medium uppercase tracking-wider text-sm lg:text-[1rem] transition-all duration-200 hover:opacity-70 hover:text-white relative group"
+                className="text-[#E5E8CE]/75 font-normal tracking-wide text-sm transition-all duration-200 hover:text-[#E5E8CE] relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-gradient-to-r from-[#789575] to-[#5A7A58] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#789575] transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
+          </div>
+
+          {/* Right Action Buttons */}
+          <div className="hidden md:flex items-center gap-4">
             <a
               href="/Shaikh_Adnan_CV_Achievements.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#E5E8CE] font-medium uppercase tracking-wider text-sm lg:text-[1rem] transition-all duration-200 hover:opacity-70 hover:text-white"
+              className="inline-flex items-center gap-2 text-[#E5E8CE]/80 font-normal text-sm transition-all duration-200 hover:text-[#E5E8CE] px-3 py-1.5"
             >
               <FileText size={15} />
               Resume
             </a>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-[#E5E8CE] text-[#1A2A1A] hover:bg-white font-medium text-sm px-5 py-2 rounded-full transition-all duration-200 shadow-sm hover:scale-105 active:scale-95"
+            >
+              Let&apos;s talk
+            </button>
           </div>
 
           {/* Mobile Hamburger */}
