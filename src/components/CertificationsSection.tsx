@@ -1,13 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FadeIn } from './FadeIn';
-import { Cloud, Award, Briefcase, Cpu, Sparkles, Medal } from 'lucide-react';
+import { Medal } from 'lucide-react';
 
 interface Certification {
   name: string;
   issuer: string;
-  icon: React.ReactNode;
   accentColor: string;
+  badge: string;
   description: string;
 }
 
@@ -15,163 +14,126 @@ const certificationsData: Certification[] = [
   {
     name: 'Oracle Cloud Infrastructure (OCI) Foundations Associate',
     issuer: 'Oracle',
-    icon: <Cloud size={24} />,
-    accentColor: '#F05A28',
-    description: 'Validates foundational knowledge of cloud concepts, OCI architectures, database systems, security mechanisms, and pricing models.',
+    accentColor: '#f1903a', // Ember
+    badge: 'CLOUD ARCHITECTURE',
+    description: 'Core cloud tenancy concepts, OCI compute architectures, virtual cloud networks (VCN), IAM security, and database solutions.',
   },
   {
-    name: 'DataCamp Data Analyst Associate',
+    name: 'Data Analyst Associate',
     issuer: 'DataCamp',
-    icon: <Award size={24} />,
-    accentColor: '#03EF62',
-    description: 'Certified proficiency in data manipulation, exploratory data analysis (EDA), statistical methods, and visualization techniques using SQL and Python.',
-  },
-  {
-    name: 'Machine Learning Internship',
-    issuer: 'The SmartBridge (Certified)',
-    icon: <Briefcase size={24} />,
-    accentColor: '#789575',
-    description: 'Practical training on real-world datasets, deploying end-to-end ML models, outlier cleaning, validation splits, and model evaluations.',
+    accentColor: '#2dd4bf', // Teal
+    badge: 'DATA WRANGLING',
+    description: 'Certified analytical capability in data manipulation, exploratory data analysis (EDA), statistical modeling, and dashboarding with Python & SQL.',
   },
   {
     name: 'IBM Artificial Intelligence Fundamentals',
     issuer: 'IBM',
-    icon: <Cpu size={24} />,
-    accentColor: '#0F62FE',
-    description: 'Core concepts of machine learning, neural network architectures, NLP, and cognitive computing concepts verified by IBM.',
+    accentColor: '#a855f7', // Purple
+    badge: 'AI FOUNDATIONS',
+    description: 'Core concepts of machine learning algorithms, deep neural network layers, NLP, computer vision, and AI ethics validated by IBM.',
   },
   {
     name: 'Databricks Accredited Generative AI Fundamentals',
     issuer: 'Databricks',
-    icon: <Sparkles size={24} />,
-    accentColor: '#FF3621',
-    description: 'Understanding Generative AI frameworks, LLM capabilities, prompt engineering, and modern vector storage architectures.',
+    accentColor: '#f1903a', // Ember
+    badge: 'GENERATIVE AI',
+    description: 'Foundations of large language models (LLMs), prompt engineering, retrieval-augmented generation (RAG), and enterprise vector index patterns.',
   },
   {
-    name: 'Google Cloud Gen AI Academy APAC',
+    name: 'Machine Learning Internship (Certified)',
+    issuer: 'The SmartBridge',
+    accentColor: '#2dd4bf', // Teal
+    badge: 'PRODUCTION ML',
+    description: 'Professional training on high-dimensional datasets, building reproducible ML pipelines, stratified cross-validation, and production inference.',
+  },
+  {
+    name: 'Google Cloud Gen AI Academy APAC (Cohort 2)',
     issuer: 'Google Cloud & Hack2skill (2026)',
-    icon: <Medal size={24} />,
-    accentColor: '#4285F4',
-    description: 'Completed Cohort 2 building production GenAI solutions. Winner/finalist in React Hyderabad Buildathon & Hack The League (Jaipur).',
+    accentColor: '#efece7', // Off-white
+    badge: 'HACKATHON FINALIST',
+    description: 'Completed cohort building production GenAI solutions. Built internAI platform with Google Gemini & cuDF. Participant in React Buildathon & Hack The League.',
   },
 ];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.97 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-  },
-};
 
 export const CertificationsSection: React.FC = () => {
   return (
     <section
       id="certifications"
-      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#121110] abhishek-grid py-24 sm:py-32 px-5 sm:px-8 lg:px-12 select-none overflow-hidden border-t border-white/[0.06]"
     >
-      {/* Soft ambient background glows */}
-      <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] rounded-full bg-[#789575]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-[#5A7A58]/5 blur-[120px] pointer-events-none" />
+      {/* Background Radial Glow */}
+      <div className="absolute top-[30%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#f1903a]/08 blur-[140px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto flex flex-col relative z-10">
-        {/* Section Heading */}
-        <FadeIn delay={0} y={30}>
-          <h2 className="hero-heading font-black uppercase text-center text-[clamp(2.2rem,8vw,120px)] leading-none mb-4">
-            Certifications
-          </h2>
-        </FadeIn>
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div>
+            <FadeIn delay={0.1} y={20}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#f1903a]">
+                  06 // Credentials & Honors
+                </span>
+                <div className="h-px w-12 bg-[#f1903a]/30" />
+              </div>
+            </FadeIn>
 
-        <FadeIn delay={0.1} y={20}>
-          <p className="text-[#E5E8CE]/50 text-center text-xs sm:text-sm uppercase tracking-[0.2em] font-light mb-16 sm:mb-20 md:mb-24 max-w-lg mx-auto">
-            Professional validations of my technical expertise
-          </p>
-        </FadeIn>
+            <FadeIn delay={0.15} y={20}>
+              <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[#efece7]">
+                <span>Verified</span> <span className="text-[#8a857e]">// Certifications</span>
+              </h2>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.2} y={15}>
+            <p className="font-mono text-xs text-[#8a857e] uppercase tracking-wider">
+              [ Industry-Standard Technical Endorsements ]
+            </p>
+          </FadeIn>
+        </div>
 
         {/* Certifications Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificationsData.map((cert, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className={`group relative rounded-[28px] p-[1.5px] overflow-hidden flex flex-col h-full ${
-                index === 4 && certificationsData.length % 3 !== 0 ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
-            >
-              {/* Interactive border glow on hover */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[28px] blur-sm"
-                style={{
-                  background: `linear-gradient(135deg, ${cert.accentColor}30, transparent, ${cert.accentColor}15)`,
-                }}
-              />
-
-              {/* Card Main Container */}
-              <div className="relative flex-grow rounded-[26.5px] bg-[#121212]/90 border border-white/[0.08] group-hover:border-transparent p-6 flex flex-col gap-5 transition-all duration-500 backdrop-blur-md">
-                {/* Inner radial gradient glow behind icon */}
-                <div
-                  className="absolute -top-10 -left-10 w-24 h-24 rounded-full blur-2xl opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-500"
-                  style={{
-                    background: `radial-gradient(circle, ${cert.accentColor}, transparent)`,
-                  }}
-                />
-
-                {/* Header Icon & Issuer */}
-                <div className="flex justify-between items-start">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10 group-hover:border-transparent transition-all duration-300"
-                    style={{
-                      backgroundColor: `${cert.accentColor}10`,
-                      color: cert.accentColor,
-                    }}
-                  >
-                    {cert.icon}
+            <FadeIn key={cert.name} delay={index * 0.08} y={25} className="w-full">
+              <div className="h-full rounded-[24px] overflow-hidden border border-white/[0.08] hover:border-[#f1903a]/40 bg-[#181614]/90 backdrop-blur-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_15px_40px_rgba(241,144,58,0.06)] group text-left">
+                
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span
+                      className="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded border"
+                      style={{
+                        color: cert.accentColor,
+                        backgroundColor: `${cert.accentColor}10`,
+                        borderColor: `${cert.accentColor}25`,
+                      }}
+                    >
+                      {cert.badge}
+                    </span>
+                    <span className="font-sans text-xs text-[#8a857e] font-medium">
+                      {cert.issuer}
+                    </span>
                   </div>
-                  <span
-                    className="text-[10px] sm:text-xs uppercase tracking-widest font-semibold px-2.5 py-1 rounded-full bg-white/[0.03] border border-white/5"
-                    style={{ color: `${cert.accentColor}cc` }}
-                  >
-                    {cert.issuer}
-                  </span>
-                </div>
 
-                {/* Name & Description */}
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-semibold text-sm sm:text-base text-[#E5E8CE] group-hover:text-white transition-colors duration-300 line-clamp-2 h-12 flex items-center">
+                  <h3 className="font-display font-semibold text-base sm:text-lg text-[#efece7] mb-3 group-hover:text-white transition-colors">
                     {cert.name}
                   </h3>
-                  <p className="text-[#E5E8CE]/60 font-light text-xs sm:text-sm leading-relaxed mt-1">
+
+                  <p className="font-sans text-xs sm:text-sm text-[#8a857e] leading-relaxed">
                     {cert.description}
                   </p>
                 </div>
 
-                {/* Bottom detail / Decoration */}
-                <div className="mt-auto pt-4 border-t border-white/[0.05] flex items-center justify-between text-[#E5E8CE]/40 group-hover:text-[#E5E8CE]/60 transition-colors duration-300">
-                  <span className="text-[9px] uppercase tracking-widest font-mono">
-                    Verified Credential
-                  </span>
+                <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between font-mono text-[11px] text-[#8a857e]">
+                  <span>AUTHENTICATED</span>
                   <Medal size={14} style={{ color: cert.accentColor }} />
                 </div>
+
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

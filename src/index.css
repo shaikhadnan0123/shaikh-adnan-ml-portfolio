@@ -12,38 +12,38 @@
   html,
   body,
   #root {
-    background-color: #1A2A1A;
-    color: #E5E8CE;
-    font-family: 'Inter', 'Kanit', sans-serif;
+    background-color: #121110;
+    color: #efece7;
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     overflow-x: clip;
     scroll-behavior: smooth;
   }
 
-  /* Custom Scrollbar */
+  /* Custom Scrollbar in Ember */
   ::-webkit-scrollbar {
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #1A2A1A;
+    background: #121110;
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #789575, #5A7A58);
+    background: linear-gradient(180deg, #f1903a, #b45309);
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #8CAA87, #6B8F69);
+    background: #f1903a;
   }
 
   /* Firefox scrollbar */
   html {
     scrollbar-width: thin;
-    scrollbar-color: #5A7A58 #1A2A1A;
+    scrollbar-color: #f1903a #121110;
   }
 
-  /* Selection */
+  /* Selection in Ember */
   ::selection {
-    background: rgba(120, 149, 117, 0.35);
+    background: rgba(241, 144, 58, 0.35);
     color: #ffffff;
   }
 
@@ -63,16 +63,26 @@
 }
 
 /* ================================
-   HEADING GRADIENT
+   GRID & BACKGROUND EFFECTS
    ================================ */
+.abhishek-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
 .hero-heading {
-  background: linear-gradient(180deg, #5A7A58 0%, #E5E8CE 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-top: 0.1em;
-  padding-bottom: 0.15em;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.04em;
+}
+
+/* Two-tone heading helper */
+.heading-two-tone {
+  color: #efece7;
+}
+.heading-two-tone span {
+  color: #8a857e;
 }
 
 /* ================================
@@ -174,9 +184,9 @@
    UTILITIES
    ================================ */
 
-/* Gradient text utility */
+/* Gradient text utility in Ember */
 .gradient-text {
-  background: linear-gradient(135deg, #789575, #5A7A58, #6B8F69);
+  background: linear-gradient(135deg, #efece7 0%, #f1903a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -184,31 +194,14 @@
 
 /* Glassmorphism */
 .glass {
-  background: rgba(26, 42, 26, 0.6);
+  background: rgba(24, 22, 20, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(229, 232, 206, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Noise texture overlay */
-.noise-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Fade mask for marquees */
-.marquee-mask {
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-
-/* Section divider glow line */
+/* Section divider line */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(120, 149, 117, 0.4), rgba(90, 122, 88, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(241, 144, 58, 0.3), rgba(255, 255, 255, 0.08), transparent);
 }

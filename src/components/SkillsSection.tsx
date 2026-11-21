@@ -1,251 +1,210 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Terminal, Brain, Cloud, Database } from 'lucide-react';
 import { FadeIn } from './FadeIn';
+import { Brain, Sparkles, Server, Database } from 'lucide-react';
 
-// Animated Terminal Icon for Programming Languages
-const AnimatedTerminal = () => {
-  return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#6B8F69]/10 text-[#6B8F69]">
-      <motion.div
-        animate={{
-          scale: [1, 1.05, 1],
-        }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <Terminal size={28} />
-      </motion.div>
-      <motion.span
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ duration: 1, repeat: Infinity }}
-        className="absolute bottom-2.5 right-3 w-1.5 h-3 bg-[#6B8F69]"
-      />
-    </div>
-  );
-};
-
-// Animated Brain Icon for ML/AI
-const AnimatedBrain = () => {
-  return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#789575]/10 text-[#789575]">
-      <motion.div
-        animate={{
-          scale: [1, 1.1, 1],
-          filter: [
-            'drop-shadow(0 0 2px rgba(120, 149, 117, 0.2))',
-            'drop-shadow(0 0 8px rgba(120, 149, 117, 0.5))',
-            'drop-shadow(0 0 2px rgba(120, 149, 117, 0.2))',
-          ],
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <Brain size={28} />
-      </motion.div>
-      {/* Floating neural node connection dots */}
-      <motion.div
-        animate={{
-          y: [-2, 2, -2],
-          x: [-1, 2, -1],
-          opacity: [0.3, 0.9, 0.3],
-        }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-1.5 right-2.5 w-1.5 h-1.5 rounded-full bg-[#5A7A58]"
-      />
-      <motion.div
-        animate={{
-          y: [2, -2, 2],
-          x: [2, -1, 2],
-          opacity: [0.3, 0.9, 0.3],
-        }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-2 left-2 w-1 h-1 rounded-full bg-[#789575]"
-      />
-    </div>
-  );
-};
-
-// Animated Cloud Icon for Web & Cloud Deployment
-const AnimatedCloud = () => {
-  return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#8CAA87]/10 text-[#8CAA87]">
-      <motion.div
-        animate={{
-          y: [0, -3, 0],
-        }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <Cloud size={28} />
-      </motion.div>
-      {/* Moving wind dash line */}
-      <motion.div
-        initial={{ x: -6, opacity: 0 }}
-        animate={{ x: 6, opacity: [0, 0.8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: 'linear', delay: 0.5 }}
-        className="absolute bottom-2.5 left-3 w-3 h-0.5 bg-[#8CAA87]/60 rounded"
-      />
-    </div>
-  );
-};
-
-// Animated Database Icon for Databases & Tools
-const AnimatedDatabase = () => {
-  return (
-    <div className="relative w-12 h-12 flex items-center justify-center rounded-xl bg-[#A4B89E]/10 text-[#A4B89E]">
-      <motion.div
-        animate={{
-          scale: [1, 1.04, 1],
-        }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <Database size={28} />
-      </motion.div>
-      {/* Flickering database server status indicators */}
-      <motion.div
-        animate={{
-          opacity: [0.3, 1, 0.3],
-        }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-[17px] top-[17px] w-1 h-1 rounded-full bg-[#A4B89E]"
-      />
-      <motion.div
-        animate={{
-          opacity: [1, 0.3, 1],
-        }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-[17px] top-[24px] w-1 h-1 rounded-full bg-[#A4B89E]"
-      />
-    </div>
-  );
-};
-
-interface SkillGroup {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  skills: string[];
-  glowColor: string;
-  badgeBg: string;
+interface SkillItem {
+  name: string;
+  rating: number; // 1 to 5
 }
 
-const skillsData: SkillGroup[] = [
+interface SkillCategory {
+  title: string;
+  monoLabel: string;
+  description: string;
+  icon: React.ReactNode;
+  accentColor: string;
+  skills: SkillItem[];
+}
+
+const skillCategories: SkillCategory[] = [
   {
-    title: 'Languages & Frontend',
-    description: 'Core programming languages and modern frontend tooling for intelligent AI-driven applications.',
-    icon: <AnimatedTerminal />,
-    skills: ['Python', 'JavaScript', 'SQL', 'HTML/CSS', 'React', 'Vite'],
-    glowColor: 'from-[#6B8F69]/40 to-[#789575]/40',
-    badgeBg: 'bg-[#6B8F69]/10 hover:bg-[#6B8F69]/20 text-[#6B8F69] border-[#6B8F69]/10'
+    title: 'Machine Learning & Deep Learning',
+    monoLabel: 'MODEL ARCHITECTURES // EVALUATION',
+    description: 'Mathematical algorithmic foundations, gradient descent, feature tuning, and neural network training.',
+    icon: <Brain size={22} />,
+    accentColor: '#f1903a', // Ember
+    skills: [
+      { name: 'PyTorch & Neural Networks', rating: 5 },
+      { name: 'Scikit-learn & Tabular Pipelines', rating: 5 },
+      { name: 'Feature Engineering & Outliers', rating: 5 },
+      { name: 'TensorFlow & Keras', rating: 4 },
+      { name: 'Model Evaluation (R², ROC-AUC, F1)', rating: 5 },
+      { name: 'MLOps & Inference Optimization', rating: 4 },
+    ],
   },
   {
-    title: 'ML, Deep Learning & MLOps',
-    description: 'Specialized mathematical libraries, GPU data acceleration, neural networks, and MLOps workflows.',
-    icon: <AnimatedBrain />,
+    title: 'GenAI, LLMs & Vector Search',
+    monoLabel: 'RAG // SEMANTIC EMBEDDINGS',
+    description: 'Contextual groundings, vector databases, prompt engineering, and multimodal LLM APIs.',
+    icon: <Sparkles size={22} />,
+    accentColor: '#2dd4bf', // Teal
     skills: [
-      'Scikit-learn', 'PyTorch', 'TensorFlow', 'Keras', 
-      'Pandas', 'NumPy', 'NVIDIA cuDF', 'Matplotlib', 
-      'Feature Engineering', 'Model Evaluation & Tuning', 'MLOps'
+      { name: 'Gemini API & LLM Reasoning', rating: 5 },
+      { name: 'RAG Architecture & Chunking', rating: 5 },
+      { name: 'ChromaDB Vector Retrieval', rating: 5 },
+      { name: 'Prompt Engineering & Few-Shot', rating: 5 },
+      { name: 'Computer Vision & OpenCV', rating: 4 },
+      { name: 'NLP & Text Classification', rating: 4 },
     ],
-    glowColor: 'from-[#789575]/40 to-[#5A7A58]/40',
-    badgeBg: 'bg-[#789575]/10 hover:bg-[#789575]/20 text-[#789575] border-[#789575]/10'
   },
   {
-    title: 'GenAI, CV & NLP',
-    description: 'Retrieval-Augmented Generation, vector database embeddings, vision pipelines, and LLM reasoning.',
-    icon: <AnimatedCloud />,
+    title: 'Backend Infrastructure & APIs',
+    monoLabel: 'MICROSERVICES // AUTHENTICATION',
+    description: 'High-concurrency microservices, JWT authentication, containerization, and REST interfaces.',
+    icon: <Server size={22} />,
+    accentColor: '#a855f7', // Purple
     skills: [
-      'LLMs (Gemini)', 'RAG Architecture', 'ChromaDB', 
-      'Prompt Engineering', 'OpenCV', 'NLP', 
-      'Image Classification', 'Object Detection'
+      { name: 'FastAPI REST Microservices', rating: 5 },
+      { name: 'Flask API Development', rating: 5 },
+      { name: 'JWT & Argon2id Security', rating: 5 },
+      { name: 'Docker Containerization', rating: 4 },
+      { name: 'Express.js & Node APIs', rating: 4 },
+      { name: 'SQLAlchemy & ORM Architecture', rating: 4 },
     ],
-    glowColor: 'from-[#8CAA87]/40 to-[#789575]/40',
-    badgeBg: 'bg-[#8CAA87]/10 hover:bg-[#8CAA87]/20 text-[#8CAA87] border-[#8CAA87]/10'
   },
   {
-    title: 'Backend, Cloud & Analytics',
-    description: 'Production microservices, secure authentication, cloud infrastructure, and business intelligence.',
-    icon: <AnimatedDatabase />,
+    title: 'Data Acceleration & Cloud Systems',
+    monoLabel: 'GPU PIPELINES // CLUSTER INFRA',
+    description: 'Hardware-accelerated analytics, serverless relational databases, and enterprise data warehouses.',
+    icon: <Database size={22} />,
+    accentColor: '#f1903a', // Ember
     skills: [
-      'FastAPI', 'Flask', 'Express.js', 'REST APIs', 
-      'JWT Authentication', 'Docker', 'Google Cloud (BigQuery, Cloud Run)', 
-      'Oracle Cloud (OCI)', 'AWS', 'Databricks', 
-      'PostgreSQL', 'Power BI', 'Tableau', 'Git & GitHub', 'Jupyter Notebook'
+      { name: 'NVIDIA cuDF (GPU Acceleration)', rating: 5 },
+      { name: 'Pandas & NumPy Vectorization', rating: 5 },
+      { name: 'Google Cloud (BigQuery, Cloud Run)', rating: 4 },
+      { name: 'Oracle Cloud Infrastructure (OCI)', rating: 4 },
+      { name: 'Neon Serverless PostgreSQL', rating: 5 },
+      { name: 'Git, GitHub Actions & Linux CLI', rating: 5 },
     ],
-    glowColor: 'from-[#A4B89E]/40 to-[#789575]/40',
-    badgeBg: 'bg-[#A4B89E]/10 hover:bg-[#A4B89E]/20 text-[#A4B89E] border-[#A4B89E]/10'
-  }
+  },
 ];
+
+// Helper component for the 5-bar ratings
+const RatingBars: React.FC<{ rating: number; color: string }> = ({ rating, color }) => {
+  return (
+    <div className="flex items-center gap-1.5">
+      {[1, 2, 3, 4, 5].map((bar) => {
+        const isFilled = bar <= rating;
+        return (
+          <span
+            key={bar}
+            className="w-3.5 h-1.5 rounded-sm transition-all duration-300"
+            style={{
+              backgroundColor: isFilled ? color : 'rgba(255, 255, 255, 0.08)',
+              boxShadow: isFilled ? `0 0 8px ${color}33` : 'none',
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 export const SkillsSection: React.FC = () => {
   return (
     <section
       id="skills"
-      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#121110] abhishek-grid py-24 sm:py-32 px-5 sm:px-8 lg:px-12 select-none overflow-hidden border-t border-white/[0.06]"
     >
-      {/* Decorative ambient background glows */}
-      <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] rounded-full bg-[#789575]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] rounded-full bg-[#5A7A58]/10 blur-[120px] pointer-events-none" />
+      {/* Background Glows */}
+      <div className="absolute top-[20%] right-[-5%] w-[450px] h-[450px] rounded-full bg-[#a855f7]/07 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[-5%] w-[450px] h-[450px] rounded-full bg-[#f1903a]/08 blur-[140px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto flex flex-col relative z-10">
-        {/* Section Heading */}
-        <FadeIn delay={0} y={30}>
-          <h2 className="hero-heading font-black uppercase text-center text-[clamp(3rem,12vw,160px)] leading-none mb-16 sm:mb-20 md:mb-28">
-            Skills
-          </h2>
-        </FadeIn>
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div>
+            <FadeIn delay={0.1} y={20}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#f1903a]">
+                  04 // Technical Arsenal
+                </span>
+                <div className="h-px w-12 bg-[#f1903a]/30" />
+              </div>
+            </FadeIn>
 
-        {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 w-full">
-          {skillsData.map((group, index) => (
-            <FadeIn
-              key={group.title}
-              delay={index * 0.15}
-              y={40}
-              className="w-full"
-            >
-              <div className="relative group rounded-[32px] p-[1.5px] transition-all duration-500 overflow-hidden h-full">
-                {/* Glowing border background visible on hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${group.glowColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[32px] blur-sm`}
-                />
+            <FadeIn delay={0.15} y={20}>
+              <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[#efece7]">
+                <span>Core Capabilities</span> <span className="text-[#8a857e]">// & 5-Bar Tooling</span>
+              </h2>
+            </FadeIn>
+          </div>
 
-                {/* Card Container */}
-                <div className="relative h-full w-full rounded-[30.5px] bg-[#121212]/90 border border-white/[0.08] group-hover:border-transparent p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 backdrop-blur-md z-10">
-                  {/* Subtle top-left soft glow inside card */}
-                  <div className={`absolute -top-10 -left-10 w-24 h-24 rounded-full bg-gradient-to-br ${group.glowColor} blur-2xl opacity-15 pointer-events-none transition-all duration-500 group-hover:opacity-25`} />
+          <FadeIn delay={0.2} y={15}>
+            <div className="flex items-center gap-4 font-mono text-xs text-[#8a857e]">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#f1903a]" /> ML/Data
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#2dd4bf]" /> GenAI
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#a855f7]" /> Backend
+              </span>
+            </div>
+          </FadeIn>
+        </div>
 
-                  <div>
-                    {/* Card Header */}
-                    <div className="flex items-center gap-4 mb-5">
-                      {group.icon}
-                      <h3 className="font-semibold text-lg sm:text-xl uppercase tracking-wide text-[#E5E8CE]">
-                        {group.title}
-                      </h3>
+        {/* 2-Column Skills Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {skillCategories.map((category, index) => (
+            <FadeIn key={category.title} delay={index * 0.1} y={30} className="w-full">
+              <div className="h-full rounded-[28px] overflow-hidden border border-white/[0.08] hover:border-[#f1903a]/40 bg-[#181614]/90 backdrop-blur-md p-6 sm:p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-[0_20px_50px_rgba(241,144,58,0.06)] group">
+                
+                <div>
+                  {/* Card Header: Icon & Mono Label */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10"
+                      style={{
+                        backgroundColor: `${category.accentColor}12`,
+                        color: category.accentColor,
+                      }}
+                    >
+                      {category.icon}
                     </div>
 
-                    {/* Description */}
-                    <p className="text-[#E5E8CE]/60 font-light text-sm mb-6 leading-relaxed">
-                      {group.description}
-                    </p>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#8a857e] px-2.5 py-1 rounded bg-[#121110] border border-white/[0.06]">
+                      {category.monoLabel}
+                    </span>
+                  </div>
 
-                    {/* Skill Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {group.skills.map((skill, sIdx) => (
-                        <motion.span
-                          key={sIdx}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          whileTap={{ scale: 0.98 }}
-                          className={`text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider font-semibold border transition-all duration-300 cursor-default select-none ${group.badgeBg}`}
-                        >
-                          {skill}
-                        </motion.span>
-                      ))}
-                    </div>
+                  {/* Title & Description */}
+                  <h3 className="font-display font-semibold text-xl text-[#efece7] mb-2 tracking-tight group-hover:text-white transition-colors">
+                    {category.title}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-[#8a857e] leading-relaxed mb-6">
+                    {category.description}
+                  </p>
+
+                  {/* Skill Items List with 5-Bar Ratings */}
+                  <div className="flex flex-col gap-3.5">
+                    {category.skills.map((skill, sIdx) => (
+                      <div
+                        key={sIdx}
+                        className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.03] hover:border-white/[0.08] transition-colors"
+                      >
+                        <span className="font-sans text-xs sm:text-sm text-[#efece7]/90 font-medium">
+                          {skill.name}
+                        </span>
+                        <RatingBars rating={skill.rating} color={category.accentColor} />
+                      </div>
+                    ))}
                   </div>
                 </div>
+
+                {/* Bottom Status Line */}
+                <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-[#8a857e]">
+                  <span>VERIFIED PROFICIENCY</span>
+                  <span style={{ color: category.accentColor }}>TIER 1 PRODUCTION</span>
+                </div>
+
               </div>
             </FadeIn>
           ))}
         </div>
+
       </div>
     </section>
   );

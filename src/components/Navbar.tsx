@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, FileText, ArrowUpRight } from 'lucide-react';
 
 const navLinks = [
-  { label: 'About', id: 'about' },
+  { label: 'Work', id: 'projects' },
   { label: 'Skills', id: 'skills' },
   { label: 'Experience', id: 'timeline' },
-  { label: 'Projects', id: 'projects' },
+  { label: 'About', id: 'about' },
   { label: 'Contact', id: 'contact' },
 ];
 
@@ -14,27 +14,36 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
   const lastScrollY = useRef(0);
 
   const handleScroll = useCallback(() => {
     const currentY = window.scrollY;
     
-    setScrolled((prev) => {
-      const next = currentY > 50;
-      return prev === next ? prev : next;
-    });
+    setScrolled(currentY > 20);
 
-    // Hide on scroll down past 300px, show on scroll up
     if (currentY > 300) {
-      setHidden((prev) => {
-        const next = currentY > lastScrollY.current;
-        return prev === next ? prev : next;
-      });
+      setHidden(currentY > lastScrollY.current && currentY - lastScrollY.current > 5);
     } else {
-      setHidden((prev) => (prev ? false : prev));
+      setHidden(false);
     }
     
     lastScrollY.current = currentY;
+
+    // Detect active section
+    const sections = ['hero', 'projects', 'skills', 'timeline', 'about', 'contact'];
+    const scrollPosition = currentY + 120;
+    for (const sectionId of sections) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          setActiveSection(sectionId);
+          break;
+        }
+      }
+    }
   }, []);
 
   useEffect(() => {
@@ -44,7 +53,7 @@ export const Navbar: React.FC = () => {
 
   const scrollToSection = (id: string) => {
     setMobileOpen(false);
-    if (id === 'top') {
+    if (id === 'top' || id === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -54,7 +63,6 @@ export const Navbar: React.FC = () => {
     }
   };
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
@@ -66,63 +74,81 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Desktop + Mobile Navbar */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
         transition={{ duration: 0.35, ease: [0.76, 0, 0.24, 1] }}
         className={`fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 ${
           scrolled
-            ? 'bg-[#1A2A1A]/70 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
-            : 'bg-transparent'
+            ? 'h-20 bg-[#121110]/85 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
+            : 'h-20 bg-[#121110]/40 backdrop-blur-md border-b border-white/[0.04]'
         }`}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-10 py-4 md:py-5">
-          {/* Logo */}
+        <div className="max-w-7xl mx-auto h-full flex justify-between items-center px-5 sm:px-8 lg:px-12">
+          
+          {/* Brand Logo */}
           <button
             onClick={() => scrollToSection('top')}
-            className="text-[#E5E8CE] font-bold tracking-tight text-lg md:text-xl transition-opacity duration-200 hover:opacity-80 z-10"
+            className="flex items-center gap-1.5 font-display font-semibold text-lg sm:text-xl tracking-tight text-[#efece7] transition-opacity duration-200 hover:opacity-80 z-10"
           >
-            Shaikh Adnan
+            <span>Shaikh Adnan</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f1903a]" />
           </button>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-7 lg:gap-10">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-[#E5E8CE]/75 font-normal tracking-wide text-sm transition-all duration-200 hover:text-[#E5E8CE] relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#789575] transition-all duration-300 group-hover:w-full" />
-              </button>
-            ))}
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center gap-1 bg-[#181614]/80 border border-white/[0.08] rounded-full p-1.5 backdrop-blur-md">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
+                    isActive
+                      ? 'bg-white/[0.08] text-[#efece7] shadow-sm'
+                      : 'text-[#8a857e] hover:text-[#efece7]'
+                  }`}
+                >
+                  {link.label}
+                </button>
+              );
+            })}
           </div>
 
-          {/* Right Action Buttons */}
+          {/* Right Action Bar */}
           <div className="hidden md:flex items-center gap-4">
+            {/* Status Indicator */}
+            <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.02] border border-white/[0.06] font-mono text-[11px] text-[#2dd4bf]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2dd4bf] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2dd4bf]" />
+              </span>
+              <span className="tracking-wider uppercase">Open to roles</span>
+            </div>
+
             <a
               href="/Shaikh_Adnan_CV_Achievements.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#E5E8CE]/80 font-normal text-sm transition-all duration-200 hover:text-[#E5E8CE] px-3 py-1.5"
+              className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#8a857e] hover:text-[#efece7] transition-colors duration-200 px-3 py-1.5"
             >
-              <FileText size={15} />
-              Resume
+              <FileText size={14} />
+              <span>Resume</span>
             </a>
+
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-[#E5E8CE] text-[#1A2A1A] hover:bg-white font-medium text-sm px-5 py-2 rounded-full transition-all duration-200 shadow-sm hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-1.5 bg-[#efece7] text-[#121110] hover:bg-[#f1903a] font-medium text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
             >
-              Let&apos;s talk
+              <span>Let&apos;s talk</span>
+              <ArrowUpRight size={14} />
             </button>
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative z-[110] w-10 h-10 flex items-center justify-center text-[#E5E8CE]"
+            className="md:hidden relative z-[110] w-10 h-10 flex items-center justify-center text-[#efece7]"
             aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
@@ -160,37 +186,53 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[99] bg-[#1A2A1A]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-[99] bg-[#121110]/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 md:hidden p-6"
           >
-            {navLinks.map((link, index) => (
-              <motion.button
-                key={link.id}
+            <div className="flex flex-col items-center gap-6 w-full max-w-xs">
+              {navLinks.map((link, index) => (
+                <motion.button
+                  key={link.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ delay: index * 0.06, duration: 0.3 }}
+                  onClick={() => scrollToSection(link.id)}
+                  className="font-display text-2xl font-semibold tracking-tight text-[#efece7] hover:text-[#f1903a] transition-colors duration-200"
+                >
+                  {link.label}
+                </motion.button>
+              ))}
+
+              <div className="w-full h-px bg-white/10 my-2" />
+
+              <motion.a
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                transition={{ delay: index * 0.08, duration: 0.3 }}
-                onClick={() => scrollToSection(link.id)}
-                className="text-[#E5E8CE] font-bold uppercase tracking-[0.2em] text-2xl hover:text-white transition-colors duration-200"
+                transition={{ delay: 0.35, duration: 0.3 }}
+                href="/Shaikh_Adnan_CV_Achievements.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full border border-white/10 text-sm font-mono uppercase tracking-wider text-[#efece7]"
               >
-                {link.label}
-              </motion.button>
-            ))}
-            <motion.a
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ delay: navLinks.length * 0.08, duration: 0.3 }}
-              href="/Shaikh_Adnan_CV_Achievements.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 text-[#E5E8CE] font-bold uppercase tracking-[0.2em] text-2xl hover:text-white transition-colors duration-200"
-            >
-              <FileText size={22} />
-              Resume
-            </motion.a>
+                <FileText size={16} />
+                <span>Download Resume</span>
+              </motion.a>
 
-            {/* Decorative glow */}
-            <div className="absolute bottom-[20%] w-[250px] h-[250px] rounded-full bg-[#789575]/10 blur-[100px] pointer-events-none" />
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+                onClick={() => scrollToSection('contact')}
+                className="w-full py-3.5 rounded-full bg-[#f1903a] text-[#121110] font-medium text-sm uppercase tracking-wider shadow-lg"
+              >
+                Let&apos;s talk
+              </motion.button>
+            </div>
+
+            {/* Ambient Ember Glow in Mobile Menu */}
+            <div className="absolute bottom-[10%] w-[250px] h-[250px] rounded-full bg-[#f1903a]/10 blur-[100px] pointer-events-none" />
           </motion.div>
         )}
       </AnimatePresence>

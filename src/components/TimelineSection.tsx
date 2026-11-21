@@ -1,263 +1,172 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { MapPin } from 'lucide-react';
 import { FadeIn } from './FadeIn';
-import { GraduationCap, Briefcase, Calendar, MapPin } from 'lucide-react';
 
-interface TimelineItem {
-  type: 'education' | 'experience';
-  title: string;
-  organization: string;
-  period: string;
+interface TimelineEntry {
+  type: 'experience' | 'education';
+  dates: string;
+  role: string;
+  company: string;
   location: string;
+  badge: string;
   description: string;
-  highlights: string[];
-  icon: React.ReactNode;
-  accentColor: string;
+  bullets: string[];
 }
 
-const timelineData: TimelineItem[] = [
+const timelineData: TimelineEntry[] = [
   {
     type: 'experience',
-    title: 'Machine Learning Intern',
-    organization: 'Valentius Kryptix',
-    period: 'Sep 2026 – Present',
+    dates: 'SEP 2026 – PRESENT',
+    role: 'Machine Learning Intern',
+    company: 'Valentius Kryptix',
     location: 'Remote',
+    badge: 'CURRENT ROLE',
     description:
-      'Implementing foundational machine learning algorithms from scratch and benchmarking supervised models on real-world datasets.',
-    highlights: [
-      'Implementing linear regression from scratch in NumPy (gradient descent, MSE cost) for single- and multi-feature inputs; verifying MSE and R² against scikit-learn',
-      'Benchmarking five supervised algorithms on one real-world dataset with identical splits and preprocessing; ranking results by evaluation metrics in public GitHub repositories',
+      'Implementing algorithmic machine learning models from scratch in NumPy and benchmarking supervised algorithms on real-world datasets.',
+    bullets: [
+      'Implemented linear regression from scratch using gradient descent and MSE cost function for multi-feature inputs, verifying mathematical R² against Scikit-learn',
+      'Benchmarked 5 supervised algorithms on identical training/testing splits with standardized preprocessing and documented evaluation metrics',
     ],
-    icon: <Briefcase size={20} />,
-    accentColor: '#8CAA87',
   },
   {
     type: 'experience',
-    title: 'Machine Learning Intern',
-    organization: 'SaiKet Systems',
-    period: 'Dec 2025 – Jan 2026',
+    dates: 'DEC 2025 – JAN 2026',
+    role: 'Machine Learning Intern',
+    company: 'SaiKet Systems',
     location: 'Remote',
+    badge: 'INTERNSHIP',
     description:
-      'Engineered an end-to-end customer churn prediction pipeline on enterprise telecommunications data.',
-    highlights: [
-      'Built an end-to-end telecom churn pipeline: preprocessing, categorical encoding, stratified 80/20 split, and features from contract type, tenure, and monthly charges',
-      'Compared four classifiers (Logistic Regression, Decision Tree, Random Forest, Gradient Boosting) on ROC-AUC, precision, recall, and F1-score using scikit-learn',
+      'Engineered an enterprise-grade customer churn predictive pipeline for telecommunications client data.',
+    bullets: [
+      'Constructed complete telecom churn pipeline: categorical one-hot encoding, stratified 80/20 splitting, and feature synthesis from contract tenure and charges',
+      'Tuned and evaluated Logistic Regression, Decision Trees, Random Forest, and Gradient Boosting on ROC-AUC, precision, recall, and F1-score',
     ],
-    icon: <Briefcase size={20} />,
-    accentColor: '#789575',
   },
   {
     type: 'experience',
-    title: 'Machine Learning Intern (Certified)',
-    organization: 'The SmartBridge',
-    period: 'Nov 2025 – Jan 2026',
-    location: 'Hyderabad, India',
+    dates: 'NOV 2025 – JAN 2026',
+    role: 'Machine Learning Intern (Certified)',
+    company: 'The SmartBridge',
+    location: 'Hyderabad, India (Remote)',
+    badge: 'CERTIFIED INTERNSHIP',
     description:
-      'Developed production-grade ML pipelines for tabular datasets (ingestion, cleaning, transformation) with Python, Pandas, and NumPy.',
-    highlights: [
-      'Developed production-grade ML pipelines for tabular datasets (ingestion, cleaning, transformation) with Python, Pandas, and NumPy',
-      'Raised accuracy and F1 across classification and regression models via iterative EDA and model comparison; documented pipeline architecture and results',
+      'Built production-grade tabular ML pipelines for high-dimensional dataset ingestion, transformation, and automated evaluation.',
+    bullets: [
+      'Developed end-to-end ingestion and outlier filtering workflows with Python, Pandas, and NumPy',
+      'Increased model classification F1 score through iterative exploratory data analysis (EDA) and hyperparameter optimization',
     ],
-    icon: <Briefcase size={20} />,
-    accentColor: '#6B8F69',
   },
   {
     type: 'education',
-    title: 'B.E. — Artificial Intelligence & Machine Learning',
-    organization: 'Lords Institute of Engineering & Technology, Hyderabad — Osmania University',
-    period: 'Nov 2022 – Aug 2026',
-    location: 'Hyderabad, India',
+    dates: 'NOV 2022 – AUG 2026',
+    role: 'B.E. in Artificial Intelligence & Machine Learning',
+    company: 'Lords Institute of Engineering & Technology (Osmania University)',
+    location: 'Hyderabad, Telangana, India',
+    badge: 'ACADEMIC DEGREE',
     description:
-      'Pursuing Bachelor of Engineering in AI & ML with a strong focus on data workflows, model evaluation, and software integrations. Maintained a CGPA of 8.08 / 10.',
-    highlights: [
-      'Focus on Supervised/Unsupervised learning, Deep Learning, and NLP',
-      'CGPA: 8.08 / 10',
-      'Affiliated with Osmania University',
+      'Pursuing Bachelor of Engineering with extensive practical coursework in Machine Learning, Deep Neural Architectures, Natural Language Processing, and Data Structures.',
+    bullets: [
+      'Cumulative Grade Point Average (CGPA): 8.08 / 10',
+      'Key coursework: Supervised & Unsupervised Learning, Linear Algebra, Optimization, Deep Learning, MLOps',
     ],
-    icon: <GraduationCap size={20} />,
-    accentColor: '#5A7A58',
-  },
-  {
-    type: 'education',
-    title: 'Higher Secondary Education',
-    organization: 'Sri Chaitanya Junior College, Miyapur, Hyderabad',
-    period: 'June 2019 – March 2021',
-    location: 'Hyderabad, India',
-    description:
-      'Completed senior secondary school education with major focus on Mathematics, Physics, and Chemistry.',
-    highlights: [
-      'Aggregate: 84%',
-      'MPC stream (Mathematics, Physics, Chemistry)',
-    ],
-    icon: <GraduationCap size={20} />,
-    accentColor: '#6B8F69',
-  },
-  {
-    type: 'education',
-    title: 'Secondary Education',
-    organization: 'Pooja Public School, Degloor, Nanded',
-    period: 'June 2018 – March 2019',
-    location: 'Nanded, India',
-    description:
-      'Completed secondary school education with standard school curriculum.',
-    highlights: [
-      'Secondary Education curriculum',
-    ],
-    icon: <GraduationCap size={20} />,
-    accentColor: '#A4B89E',
   },
 ];
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.97 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-    },
-  }),
-};
 
 export const TimelineSection: React.FC = () => {
   return (
     <section
       id="timeline"
-      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#121110] abhishek-grid py-24 sm:py-32 px-5 sm:px-8 lg:px-12 select-none overflow-hidden border-t border-white/[0.06]"
     >
-      {/* Ambient background glows */}
-      <div className="absolute top-[15%] right-[-5%] w-[300px] h-[300px] rounded-full bg-[#5A7A58]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[15%] left-[-5%] w-[300px] h-[300px] rounded-full bg-[#789575]/8 blur-[120px] pointer-events-none" />
+      {/* Background Soft Glows */}
+      <div className="absolute top-[25%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#f1903a]/08 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-[#2dd4bf]/06 blur-[140px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto flex flex-col relative z-10">
-        {/* Section Heading */}
-        <FadeIn delay={0} y={30}>
-          <h2 className="hero-heading font-black uppercase text-center text-[clamp(3rem,12vw,160px)] leading-none mb-16 sm:mb-20 md:mb-28">
-            Journey
-          </h2>
-        </FadeIn>
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div>
+            <FadeIn delay={0.1} y={20}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#f1903a]">
+                  05 // Career Journey
+                </span>
+                <div className="h-px w-12 bg-[#f1903a]/30" />
+              </div>
+            </FadeIn>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Center vertical line */}
-          <div className="absolute left-6 md:left-1/2 md:-translate-x-[0.5px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-[#E5E8CE]/15 to-transparent" />
+            <FadeIn delay={0.15} y={20}>
+              <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[#efece7]">
+                <span>Experience</span> <span className="text-[#8a857e]">// & Academic Track</span>
+              </h2>
+            </FadeIn>
+          </div>
 
-          <div className="flex flex-col gap-16 md:gap-20">
-            {timelineData.map((item, index) => (
-              <motion.div
-                key={index}
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-50px' }}
-                variants={cardVariants}
-                className={`relative flex flex-col md:flex-row items-start gap-6 md:gap-12 ${
-                  index % 2 === 0
-                    ? 'md:flex-row'
-                    : 'md:flex-row-reverse'
-                }`}
-              >
-                {/* Timeline node */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
-                  <motion.div
-                    whileInView={{
-                      boxShadow: [
-                        `0 0 0px ${item.accentColor}40`,
-                        `0 0 20px ${item.accentColor}60`,
-                        `0 0 0px ${item.accentColor}40`,
-                      ],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="w-12 h-12 rounded-full flex items-center justify-center border-2 bg-[#1A2A1A]"
-                    style={{ borderColor: item.accentColor, color: item.accentColor }}
-                  >
-                    {item.icon}
-                  </motion.div>
+          <FadeIn delay={0.2} y={15}>
+            <p className="font-mono text-xs text-[#8a857e] uppercase tracking-wider">
+              [ Verified Chronological Milestones ]
+            </p>
+          </FadeIn>
+        </div>
+
+        {/* Abhishek Timeline Layout: Dates Left, Vertical Line + Ember Dot, Content Right */}
+        <div className="relative flex flex-col gap-12 sm:gap-14">
+          {timelineData.map((item, index) => (
+            <FadeIn key={index} delay={index * 0.1} y={30} className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-start">
+                
+                {/* Left: Dates in Mono (~3 cols) */}
+                <div className="md:col-span-3 flex md:flex-col items-center md:items-end justify-between md:justify-start gap-2 pt-1 text-left md:text-right">
+                  <span className="font-mono text-xs font-semibold text-[#f1903a] tracking-wider uppercase">
+                    {item.dates}
+                  </span>
+                  <span className="font-mono text-[10px] text-[#2dd4bf] uppercase px-2 py-0.5 rounded bg-[#2dd4bf]/10 border border-[#2dd4bf]/20">
+                    {item.badge}
+                  </span>
                 </div>
 
-                {/* Empty space for alignment */}
-                <div className="hidden md:block md:w-1/2" />
+                {/* Center: Vertical Line + Glowing Ember Dot (~1 col) */}
+                <div className="hidden md:flex md:col-span-1 justify-center relative self-stretch">
+                  <div className="w-px bg-white/10 h-full absolute top-3" />
+                  <div className="w-3.5 h-3.5 rounded-full bg-[#f1903a] shadow-[0_0_12px_#f1903a] z-10 mt-1.5 flex-shrink-0" />
+                </div>
 
-                {/* Content card */}
-                <div className="ml-16 md:ml-0 md:w-1/2 group">
-                  <div className="relative rounded-[28px] p-[1px] overflow-hidden">
-                    {/* Glowing border on hover */}
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[28px] blur-sm"
-                      style={{
-                        background: `linear-gradient(135deg, ${item.accentColor}40, transparent)`,
-                      }}
-                    />
-
-                    <div className="relative rounded-[27px] bg-[#121212]/90 border border-white/[0.08] group-hover:border-transparent p-6 sm:p-7 transition-all duration-500 backdrop-blur-md">
-                      {/* Subtle inner glow */}
-                      <div
-                        className="absolute -top-8 -left-8 w-20 h-20 rounded-full blur-2xl opacity-10 pointer-events-none group-hover:opacity-20 transition-all duration-500"
-                        style={{
-                          background: `radial-gradient(circle, ${item.accentColor}, transparent)`,
-                        }}
-                      />
-
-                      {/* Type badge */}
-                      <span
-                        className="inline-block text-[10px] uppercase tracking-[0.2em] font-bold px-3 py-1 rounded-full mb-4"
-                        style={{
-                          backgroundColor: `${item.accentColor}15`,
-                          color: item.accentColor,
-                          border: `1px solid ${item.accentColor}25`,
-                        }}
-                      >
-                        {item.type}
-                      </span>
-
-                      <h3 className="text-[#E5E8CE] font-semibold text-lg sm:text-xl mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-[#E5E8CE]/80 font-medium text-sm sm:text-base mb-3">
-                        {item.organization}
-                      </p>
-
-                      {/* Meta info */}
-                      <div className="flex flex-wrap items-center gap-4 mb-4 text-[#E5E8CE]/50 text-xs">
-                        <span className="inline-flex items-center gap-1.5">
-                          <Calendar size={12} />
-                          {item.period}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <MapPin size={12} />
-                          {item.location}
-                        </span>
-                      </div>
-
-                      <p className="text-[#E5E8CE]/60 font-light text-sm leading-relaxed mb-5">
-                        {item.description}
-                      </p>
-
-                      {/* Highlights */}
-                      <div className="flex flex-col gap-2">
-                        {item.highlights.map((highlight, hIdx) => (
-                          <div
-                            key={hIdx}
-                            className="flex items-start gap-2.5 text-xs text-[#E5E8CE]/70"
-                          >
-                            <span
-                              className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                              style={{ backgroundColor: item.accentColor }}
-                            />
-                            <span>{highlight}</span>
-                          </div>
-                        ))}
-                      </div>
+                {/* Right: Experience Content Card (~8 cols) */}
+                <div className="md:col-span-8 rounded-[24px] overflow-hidden border border-white/[0.08] hover:border-[#f1903a]/40 bg-[#181614]/90 backdrop-blur-md p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(241,144,58,0.06)] group text-left">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <h3 className="font-display font-semibold text-xl sm:text-2xl text-[#efece7] tracking-tight group-hover:text-white transition-colors">
+                      {item.role}
+                    </h3>
+                    <div className="flex items-center gap-1.5 text-xs text-[#8a857e]">
+                      <MapPin size={13} className="text-[#f1903a]" />
+                      <span>{item.location}</span>
                     </div>
                   </div>
+
+                  <p className="font-sans text-sm font-medium text-[#f1903a] mb-4">
+                    {item.company}
+                  </p>
+
+                  <p className="font-sans text-sm text-[#8a857e] leading-relaxed mb-5">
+                    {item.description}
+                  </p>
+
+                  <div className="flex flex-col gap-2 pt-3 border-t border-white/[0.06]">
+                    {item.bullets.map((bullet, bIdx) => (
+                      <div key={bIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#efece7]/85">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#f1903a] mt-2 flex-shrink-0" />
+                        <span>{bullet}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+
+              </div>
+            </FadeIn>
+          ))}
         </div>
+
       </div>
     </section>
   );

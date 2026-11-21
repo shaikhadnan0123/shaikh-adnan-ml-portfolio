@@ -19,7 +19,7 @@ export const LiveProjectButton: React.FC<LiveProjectButtonProps> = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`rounded-full border-2 border-[#E5E8CE] text-[#E5E8CE] font-medium uppercase tracking-widest transition-all duration-200 hover:bg-[#E5E8CE]/10 active:scale-95 px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base inline-block text-center select-none ${className}`}
+        className={`rounded-full border border-white/10 hover:border-[#f1903a]/60 text-[#efece7] font-mono uppercase text-xs tracking-wider transition-all duration-200 hover:bg-white/[0.05] active:scale-95 px-6 py-2.5 inline-block text-center select-none ${className}`}
       >
         {label}
       </a>
@@ -28,7 +28,7 @@ export const LiveProjectButton: React.FC<LiveProjectButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`rounded-full border-2 border-[#E5E8CE] text-[#E5E8CE] font-medium uppercase tracking-widest transition-all duration-200 hover:bg-[#E5E8CE]/10 active:scale-95 px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base select-none ${className}`}
+      className={`rounded-full border border-white/10 hover:border-[#f1903a]/60 text-[#efece7] font-mono uppercase text-xs tracking-wider transition-all duration-200 hover:bg-white/[0.05] active:scale-95 px-6 py-2.5 select-none ${className}`}
     >
       {label}
     </button>

@@ -9,8 +9,8 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
   const [phase, setPhase] = useState<'loading' | 'exit'>('loading');
 
   useEffect(() => {
-    const timer1 = setTimeout(() => setPhase('exit'), 1800);
-    const timer2 = setTimeout(() => onComplete(), 2400);
+    const timer1 = setTimeout(() => setPhase('exit'), 1400);
+    const timer2 = setTimeout(() => onComplete(), 1900);
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
@@ -19,60 +19,47 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ onComplete }) => {
 
   return (
     <AnimatePresence>
-      {phase !== 'exit' ? null : null}
       <motion.div
         key="loader"
         initial={{ opacity: 1 }}
-        animate={phase === 'exit' ? { opacity: 0, scale: 0.95 } : { opacity: 1 }}
+        animate={phase === 'exit' ? { opacity: 0, scale: 0.98 } : { opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-        onAnimationComplete={() => {
-          if (phase === 'exit') onComplete();
-        }}
-        className="fixed inset-0 z-[9998] bg-[#1A2A1A] flex flex-col items-center justify-center select-none"
+        transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
+        className="fixed inset-0 z-[9998] bg-[#121110] flex flex-col items-center justify-center select-none"
       >
-        {/* Ambient glow */}
-        <div className="absolute w-[300px] h-[300px] rounded-full bg-[#789575]/20 blur-[120px] pointer-events-none" />
-        <div className="absolute w-[200px] h-[200px] rounded-full bg-[#5A7A58]/15 blur-[100px] pointer-events-none translate-x-20 translate-y-10" />
+        {/* Soft Ambient Glow */}
+        <div className="absolute w-[350px] h-[350px] rounded-full bg-[#f1903a]/15 blur-[120px] pointer-events-none" />
 
-        {/* Name animation */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-          className="relative z-10 flex flex-col items-center gap-4"
+          transition={{ duration: 0.6 }}
+          className="relative z-10 flex flex-col items-center gap-3 text-center"
         >
-          <motion.h1
-            className="hero-heading font-black uppercase text-[clamp(2rem,8vw,80px)] leading-none tracking-tight"
-            initial={{ letterSpacing: '0.3em', opacity: 0 }}
-            animate={{ letterSpacing: '0em', opacity: 1 }}
-            transition={{ delay: 0.4, duration: 1, ease: [0.76, 0, 0.24, 1] }}
-          >
+          <div className="flex items-center gap-2 mb-1">
+            <span className="w-2 h-2 rounded-full bg-[#f1903a]" />
+            <span className="font-mono text-xs uppercase tracking-widest text-[#8a857e]">
+              INITIALIZING ENVIRONMENT
+            </span>
+          </div>
+
+          <h1 className="font-display font-semibold text-3xl sm:text-4xl text-[#efece7] tracking-tight">
             Shaikh Adnan
-          </motion.h1>
+          </h1>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 0.6, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-[#E5E8CE] text-xs sm:text-sm uppercase tracking-[0.3em] font-light"
-          >
-            Machine Learning Engineer
-          </motion.p>
+          <p className="font-mono text-xs text-[#8a857e] uppercase tracking-wider">
+            Machine Learning Engineer · AI Developer
+          </p>
 
-          {/* Loading bar */}
-          <motion.div className="mt-8 w-48 h-[2px] bg-white/10 rounded-full overflow-hidden">
+          {/* Ember loading progress bar */}
+          <div className="mt-6 w-40 h-[2px] bg-white/10 rounded-full overflow-hidden">
             <motion.div
-              className="h-full rounded-full"
-              style={{
-                background: 'linear-gradient(90deg, #789575, #5A7A58, #E5E8CE)',
-              }}
+              className="h-full bg-gradient-to-r from-[#f1903a] to-[#2dd4bf]"
               initial={{ width: '0%' }}
               animate={{ width: '100%' }}
-              transition={{ delay: 0.3, duration: 1.5, ease: 'easeInOut' }}
+              transition={{ duration: 1.2, ease: 'easeInOut' }}
             />
-          </motion.div>
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

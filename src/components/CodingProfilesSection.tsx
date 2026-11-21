@@ -1,7 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FadeIn } from './FadeIn';
-import { Github, ExternalLink, Code2, GitBranch, Star } from 'lucide-react';
+import { Github, Code2, ArrowUpRight } from 'lucide-react';
 
 interface ProfileCard {
   platform: string;
@@ -18,113 +17,83 @@ const profiles: ProfileCard[] = [
     platform: 'GitHub',
     username: 'shaikhadnan0123',
     url: 'https://github.com/shaikhadnan0123',
-    icon: <Github size={28} />,
+    icon: <Github size={24} />,
     stats: [
       { label: 'Repositories', value: '15+' },
       { label: 'Contributions', value: '200+' },
-      { label: 'Languages', value: '5+' },
+      { label: 'Primary Lang', value: 'Python' },
     ],
-    accentColor: '#E5E8CE',
+    accentColor: '#efece7',
     description:
-      'Open source ML projects, end-to-end pipelines, and collaborative development.',
+      'Open-source machine learning pipelines, FastAPI microservices, and end-to-end full-stack AI platforms.',
   },
   {
     platform: 'LeetCode',
     username: 'shaikhadnan',
     url: 'https://leetcode.com/shaikhadnan',
-    icon: <Code2 size={28} />,
+    icon: <Code2 size={24} />,
     stats: [
       { label: 'Problems Solved', value: '100+' },
-      { label: 'Contest Rating', value: '1500+' },
-      { label: 'Streak Days', value: '30+' },
+      { label: 'Focus Areas', value: 'DSA & ML' },
+      { label: 'Language', value: 'Python' },
     ],
-    accentColor: '#789575',
+    accentColor: '#f1903a',
     description:
-      'Algorithmic problem solving in Python & C++, focused on data structures and optimization.',
+      'Algorithmic problem solving focusing on dynamic programming, arrays, graph algorithms, and optimization.',
   },
 ];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.97 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
-  },
-};
 
 export const CodingProfilesSection: React.FC = () => {
   return (
     <section
       id="coding-profiles"
-      className="relative w-full bg-[#1A2A1A] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 select-none overflow-hidden"
+      className="relative w-full bg-[#121110] abhishek-grid py-24 sm:py-32 px-5 sm:px-8 lg:px-12 select-none overflow-hidden border-t border-white/[0.06]"
     >
-      {/* Ambient background */}
-      <div className="absolute top-[30%] left-[-8%] w-[280px] h-[280px] rounded-full bg-[#789575]/6 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-8%] w-[280px] h-[280px] rounded-full bg-[#5A7A58]/6 blur-[100px] pointer-events-none" />
+      {/* Background Soft Glows */}
+      <div className="absolute top-[20%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#f1903a]/06 blur-[140px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto flex flex-col relative z-10">
-        {/* Section Heading */}
-        <FadeIn delay={0} y={30}>
-          <h2 className="hero-heading font-black uppercase text-center text-[clamp(3rem,12vw,160px)] leading-none mb-6 sm:mb-8">
-            Profiles
-          </h2>
-        </FadeIn>
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div>
+            <FadeIn delay={0.1} y={20}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="font-mono text-xs uppercase tracking-widest text-[#f1903a]">
+                  07 // Coding Profiles
+                </span>
+                <div className="h-px w-12 bg-[#f1903a]/30" />
+              </div>
+            </FadeIn>
 
-        <FadeIn delay={0.1} y={20}>
-          <p className="text-[#E5E8CE]/50 text-center text-sm sm:text-base uppercase tracking-[0.15em] font-light mb-16 sm:mb-20 md:mb-24 max-w-lg mx-auto">
-            Where I code, contribute & compete
-          </p>
-        </FadeIn>
+            <FadeIn delay={0.15} y={20}>
+              <h2 className="font-display font-semibold text-3xl sm:text-4xl md:text-5xl tracking-[-0.03em] text-[#efece7]">
+                <span>Competitive</span> <span className="text-[#8a857e]">// Code & Open Source</span>
+              </h2>
+            </FadeIn>
+          </div>
 
-        {/* Profile Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
-        >
-          {profiles.map((profile) => (
-            <motion.a
-              key={profile.platform}
-              href={profile.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="group relative rounded-[32px] p-[1.5px] overflow-hidden block"
-            >
-              {/* Glowing border on hover */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[32px] blur-sm"
-                style={{
-                  background: `linear-gradient(135deg, ${profile.accentColor}40, transparent, ${profile.accentColor}20)`,
-                }}
-              />
+          <FadeIn delay={0.2} y={15}>
+            <p className="font-mono text-xs text-[#8a857e] uppercase tracking-wider">
+              [ Active Public Profiles ]
+            </p>
+          </FadeIn>
+        </div>
 
-              <div className="relative h-full rounded-[30.5px] bg-[#121212]/90 border border-white/[0.08] group-hover:border-transparent p-6 sm:p-8 flex flex-col gap-6 transition-all duration-500 backdrop-blur-md">
-                {/* Inner subtle glow */}
-                <div
-                  className="absolute -top-10 -right-10 w-24 h-24 rounded-full blur-2xl opacity-10 pointer-events-none group-hover:opacity-20 transition-opacity duration-500"
-                  style={{
-                    background: `radial-gradient(circle, ${profile.accentColor}, transparent)`,
-                  }}
-                />
-
-                {/* Header */}
-                <div className="flex items-center justify-between">
+        {/* Profiles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {profiles.map((profile, index) => (
+            <FadeIn key={profile.platform} delay={index * 0.15} y={30} className="w-full">
+              <a
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full rounded-[28px] overflow-hidden border border-white/[0.08] hover:border-[#f1903a]/40 bg-[#181614]/90 backdrop-blur-md p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(241,144,58,0.08)] group text-left"
+              >
+                <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-4">
                     <div
-                      className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                      className="w-12 h-12 rounded-xl flex items-center justify-center border border-white/10"
                       style={{
                         backgroundColor: `${profile.accentColor}12`,
                         color: profile.accentColor,
@@ -134,69 +103,44 @@ export const CodingProfilesSection: React.FC = () => {
                     </div>
                     <div>
                       <h3
-                        className="font-semibold text-lg uppercase tracking-wide"
+                        className="font-display font-semibold text-xl tracking-tight"
                         style={{ color: profile.accentColor }}
                       >
                         {profile.platform}
                       </h3>
-                      <p className="text-[#E5E8CE]/50 text-xs font-mono">
+                      <p className="font-mono text-xs text-[#8a857e]">
                         @{profile.username}
                       </p>
                     </div>
                   </div>
-                  <ExternalLink
-                    size={18}
-                    className="text-[#E5E8CE]/30 group-hover:text-[#E5E8CE]/70 transition-colors duration-300"
-                  />
+
+                  <div className="w-9 h-9 rounded-full bg-white/[0.03] border border-white/[0.08] flex items-center justify-center text-[#8a857e] group-hover:text-[#f1903a] group-hover:border-[#f1903a]/40 transition-colors">
+                    <ArrowUpRight size={16} />
+                  </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-[#E5E8CE]/55 font-light text-sm leading-relaxed">
+                <p className="font-sans text-sm text-[#8a857e] leading-relaxed mb-6">
                   {profile.description}
                 </p>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-3 gap-3 mt-auto">
+                {/* Stats row */}
+                <div className="grid grid-cols-3 gap-3 pt-5 border-t border-white/[0.06]">
                   {profile.stats.map((stat, sIdx) => (
-                    <div
-                      key={sIdx}
-                      className="flex flex-col items-center gap-1 py-3 rounded-xl bg-white/[0.02] border border-white/[0.04]"
-                    >
-                      <span
-                        className="text-lg sm:text-xl font-bold"
-                        style={{ color: profile.accentColor }}
-                      >
+                    <div key={sIdx} className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.03] text-center">
+                      <span className="block font-display font-bold text-base sm:text-lg text-[#efece7]">
                         {stat.value}
                       </span>
-                      <span className="text-[10px] text-[#E5E8CE]/40 uppercase tracking-wider font-medium">
+                      <span className="block font-mono text-[10px] text-[#8a857e] uppercase tracking-wider mt-0.5">
                         {stat.label}
                       </span>
                     </div>
                   ))}
                 </div>
-
-                {/* Decorative dots */}
-                <div className="flex items-center gap-2 justify-center">
-                  {[GitBranch, Star, Code2].map((Icon, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{
-                        opacity: [0.15, 0.4, 0.15],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: i * 0.3,
-                      }}
-                    >
-                      <Icon size={12} className="text-[#E5E8CE]" />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.a>
+              </a>
+            </FadeIn>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

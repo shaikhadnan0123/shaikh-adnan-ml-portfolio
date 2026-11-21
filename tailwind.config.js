@@ -8,16 +8,19 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Kanit', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        darkBg: '#1A2A1A',
-        themeLight: '#E5E8CE',
-        magenta: '#789575',
-        purple: '#5A7A58',
-        orange: '#6B8F69',
-        azure: '#8CAA87',
-        emerald: '#A4B89E',
+        darkBg: '#121110',
+        card: '#181614',
+        cardBorder: '#262320',
+        ember: '#f1903a',
+        offWhite: '#efece7',
+        warmGrey: '#8a857e',
+        mutedGrey: '#5c5751',
+        teal: '#14b8a6',
+        purple: '#a855f7',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
